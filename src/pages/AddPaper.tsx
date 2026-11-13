@@ -159,7 +159,7 @@ function AddPaper() {
 			</header>
 			<aside className="data-status-inline"><strong>Schema migration pending:</strong> this form currently generates entries using the original XAI fields. Wait for the KGQA metadata schema before using it for KGQA records.</aside>
 			<div className="contribution-intro">
-				<p>Existing records follow the source repository's original classification. A generated entry can be reviewed in the preview and proposed through a pull request.</p>
+				<p>Existing records follow the source repository&rsquo;s original classification. A generated entry can be reviewed in the preview and proposed through a pull request.</p>
 				<div className="contribution-steps" aria-label="Contribution flow">
 					<span><b>01</b> Describe the paper</span>
 					<span><b>02</b> Generate JSON</span>
