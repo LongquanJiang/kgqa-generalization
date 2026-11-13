@@ -146,15 +146,29 @@ function AddPaper() {
 	const venue = form.Venue.isOld ? [venueValue] : ["Other" as Venue]
 
 	return (
-		<div className="addpaper" >
-			<h2>Paper Submission</h2>
-			<p>The original paper already includes classification of over 300 research papers. Of course this list is not exhaustive and therefore we would like to ask the wider research community to aid in extending the original research.</p>
-
-			<p>You can contribute to this project by going to the project&rsquo;s <a href="https://github.com/utwente-dmb/xai-papers/blob/master/src/db/db.json" target="_blank" rel="noreferrer" >GitHub</a>. This page shows the current contents of the database. To add a new entry simply fork the project and append the db.json file using the following template.</p>
-			
-			<Row>
-				<Col span={16}>
-					<Form labelCol={{span: 6}} wrapperCol={{span: 16}}>
+		<div className="addpaper">
+			<header className="page-heading add-paper-heading">
+				<div>
+					<div className="eyebrow-label">KGQA Generalization / contribute</div>
+					<h1>Add a paper</h1>
+					<p>Prepare a paper record, generate its database entry, and propose it through a pull request.</p>
+				</div>
+				<a className="button-outline" href="https://github.com/utwente-dmb/xai-papers/blob/master/src/db/db.json" target="_blank" rel="noreferrer">
+					Open database <span aria-hidden="true">↗</span>
+				</a>
+			</header>
+			<aside className="data-status-inline"><strong>Schema migration pending:</strong> this form currently generates entries using the original XAI fields. Wait for the KGQA metadata schema before using it for KGQA records.</aside>
+			<div className="contribution-intro">
+				<p>Existing records follow the source repository's original classification. A generated entry can be reviewed in the preview and proposed through a pull request.</p>
+				<div className="contribution-steps" aria-label="Contribution flow">
+					<span><b>01</b> Describe the paper</span>
+					<span><b>02</b> Generate JSON</span>
+					<span><b>03</b> Open a pull request</span>
+				</div>
+			</div>
+			<Row className="add-paper-layout">
+				<Col span={16} className="add-paper-form-col">
+					<Form className="paper-submission-form" labelCol={{span: 6}} wrapperCol={{span: 16}}>
 						<Item label="Title" tooltip={{ 
 							title: "Title of the paper in English",
 							icon: <InfoCircleOutlined/>
@@ -351,7 +365,7 @@ function AddPaper() {
 					</Form>
 				</Col>
 				{showJson 
-					?<Col span={8}>
+					?<Col span={8} className="json-preview-col">
 						<Item label="Your JSON">
 							<TextArea value={json} autoSize />
 							<Button onClick={copyJsonToClipboard}>Copy To Clipboard</Button>
@@ -361,7 +375,8 @@ function AddPaper() {
 				
 			</Row>
 
-			<h2>References</h2>
+			<details className="references-panel">
+				<summary>References cited in the categorization guidance</summary>
 
 			<p style={{margin: 0}}>[1] Philip Adler, Casey Falk, Sorelle A Friedler, Tionney Nix, Gabriel Rybeck, Carlos Scheidegger, Brandon Smith, and Suresh Venkatasubramanian. Auditing black-box models for indirect influence. Knowledge and Information Systems, 54(1):95&ndash;122, 2018.</p>
 			<p style={{margin: 0}}>[2] Sebastian Bach, Alexander Binder, Gr&eacute;goire Montavon, Frederick Klauschen, Klaus-Robert M&uuml;ller, and Wojciech Samek. On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation. PLOS ONE, 10(7):1&ndash;46, 07 2015.</p>
@@ -396,6 +411,7 @@ function AddPaper() {
 			<p style={{margin: 0}}>[31] Xiang Wang, Dingxian Wang, Canran Xu, Xiangnan He, Yixin Cao, and Tat-Seng Chua. Explainable reasoning over knowledge graphs for recommendation. In The Thirty-Third AAAI Conference on Artificial Intelligence, AAAI 2019, The Thirty-First Innovative Applications of Artificial Intelligence Conference, IAAI 2019, The Ninth AAAI Symposium on Educational Advances in Artificial Intelligence, EAAI 2019, Honolulu, Hawaii, USA, January 27 - February 1, 2019, pages 5329&ndash;5336. AAAI Press, 2019.</p>
 			<p style={{margin: 0}}>[32] Quanshi Zhang, Ruiming Cao, Ying Nian Wu, and Song-Chun Zhu. Growing interpretable part graphs on convnets via multi-shot learning. In Satinder P. Singh and Shaul Markovitch, editors, Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, February 4-9, 2017, San Francisco, California, USA, pages 2898&ndash;2906. AAAI Press, 2017.</p>
 			<p style={{margin: 0}}>[33] Anh Nguyen, Alexey Dosovitskiy, Jason Yosinski, Thomas Brox, and Jeff Clune. Synthesizing the preferred inputs for neurons in neural networks via deep generator networks. In D. Lee, M. Sugiyama, U. Luxburg, I. Guyon, and R. Garnett, editors, Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc., 2016.</p>
+			</details>
 		</div>
 	)
 }

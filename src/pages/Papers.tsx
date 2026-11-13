@@ -4,6 +4,7 @@ import { useExpandingAllInTable, useFilteredPapers } from "../hooks"
 import { Filters, TagList } from "../components"
 import { Paper } from "../types"
 import { getColor, typeArray, printNames, enumKeyMap, capitalize, reverseObject } from "../utils"
+import { Link } from "react-router-dom"
 const reverseEnumKeyMap = reverseObject(enumKeyMap)
 
 type Column<T> = {
@@ -123,18 +124,29 @@ function PapersPage() {
 
 
 	return (
-		<>
-			<Filters/>
-			<>
-				<Row justify="space-between">
-					<Button className="expand-all" >
+		<div className="paper-browser">
+			<header className="page-heading">
+				<div>
+					<div className="eyebrow-label">KGQA Generalization / papers</div>
+					<h1>Paper catalog</h1>
+					<p>Search and compare the records currently bundled with this project.</p>
+				</div>
+				<Link className="button-primary" to="/add-paper">Add a paper <span aria-hidden="true">↗</span></Link>
+			</header>
+			<aside className="data-status-inline"><strong>Legacy catalog:</strong> the available records and filters still use the original XAI schema; KGQA metadata migration is pending.</aside>
+			<section className="filter-panel" aria-label="Paper filters">
+				<Filters />
+			</section>
+			<div className="paper-results">
+				<Row className="paper-actions" justify="space-between">
+					<Button className="expand-all" aria-label={expandController.isAllExpanded() ? "Collapse all paper details" : "Expand all paper details"}>
 						{expandController.isAllExpanded() ? <MinusOutlined /> : <PlusOutlined />}
 					</Button>
-					<Button>
+					<Button type="primary">
 						<a href={`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(filteredPapers))}`}
 							download="FilteredList.json"
 						>
-						Export Filtered List as JSON
+						Export filtered list as JSON
 						</a>
 					</Button>
 				</Row>
@@ -167,9 +179,7 @@ function PapersPage() {
 								</Row>
 							)},
 					}}
-					className={
-						expandController.isAllExpanded() ? "table-expanding-all" : ""
-					}
+					className={`paper-table ${expandController.isAllExpanded() ? "table-expanding-all" : ""}`}
 					expandedRowKeys={expandController.expandedRowKeys}
 					onExpand={expandController.onExpand}
 					rowKey={expandController.rowKey}
@@ -178,9 +188,8 @@ function PapersPage() {
 						position: ["bottomCenter"]
 					}}
 				></Table>
-
-			</>
-		</>
+			</div>
+		</div>
 	)
 }
 

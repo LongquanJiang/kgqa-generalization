@@ -30,7 +30,7 @@ function App() {
 		"Line Chart": {
 			withSelect: true,
 			element: <GrowthLineChart type={type} />,
-			description: "The line chart displays the increase in the number of papers on the subject of Explainable AI over time (accumulative). The filtering option on the right allows you to select a particular attribute so that its development over time can be observed. It should be noted that papers can have multiple labels within a category so the sum of labels is greater than the number of papers in the database.",
+			description: "The line chart displays the cumulative number of papers over time. Select a metadata field to compare how its labels develop. Papers can have multiple labels, so category totals may exceed the number of records.",
 		},
 		"Bar Chart": {
 			withSelect: true,
@@ -40,21 +40,31 @@ function App() {
 		"Connected Graph": {
 			withSelect: false,
 			element: (<ConnectedChart />),
-			description: "The connected graph below displays papers as nodes in a graph. Papers are connected when they have many labels from our categorization in common. Filtering options can be applied and the nodes can be clicked to reveal a link to the particular paper."
+			description: "The connected graph displays papers as nodes. Papers are linked when they share multiple labels in the current catalog. Apply filters, then select a node to open its paper."
 		},
 		"Circle Packing": {
 			withSelect: true,
 			element: <CirclePackingChart type={type} />,
-			description: "The circle packing chart clusters the papers on Explainable AI based on a specific attribute. Select an attribute on the right. Each of the circles can be hovered over to see the title of the paper and clicked on to go to the paper itself."
+			description: "The circle packing chart groups papers by a selected attribute. Hover over a circle to see the paper title, or select it to open the paper."
 		},
 	}
 	return (
-		<>
-			<Filters />
-			<>
-				<Row justify="space-between" style={{ marginBottom: 12 }}>
+		<div className="charts-page">
+			<header className="page-heading">
+				<div>
+					<div className="eyebrow-label">KGQA Generalization / charts</div>
+					<h1>Charts & patterns</h1>
+					<p>Compare records over time or explore how the current metadata categories relate.</p>
+				</div>
+			</header>
+			<aside className="data-status-inline"><strong>Legacy catalog:</strong> these charts summarize the original XAI records until KGQA data and metadata are migrated.</aside>
+			<section className="charts-filters filter-panel" aria-label="Chart filters">
+				<Filters />
+			</section>
+			<section className="chart-workspace" aria-label="Paper collection charts">
+				<Row className="charts-toolbar" justify="space-between" style={{ marginBottom: 12 }}>
 					{/* Chart Select Buttons */}
-					<Col span={12}>
+					<Col span={14} className="charts-chart-selector">
 						<Group defaultValue={chart} buttonStyle="solid" onChange={HandleChartChange}>
 							{Object.keys(graphMap).map(elem =>
 								<Button key={elem} value={elem}>
@@ -76,17 +86,16 @@ function App() {
 				</Row>
 
 				{/* Description of the chart */}
-				<Row justify="center" style={{ marginBottom: 8 }}>
-					<Col span={12}>
+				<Row className="chart-description" justify="start" style={{ marginBottom: 8 }}>
+					<Col span={24}>
 						{graphMap[chart].description}
 					</Col>
 				</Row>
 
 				{/* The chart itself */}
-				{graphMap[chart].element}
-
-			</>
-		</>
+				<div className="chart-visual">{graphMap[chart].element}</div>
+			</section>
+		</div>
 	)
 }
 
