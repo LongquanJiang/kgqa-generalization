@@ -127,12 +127,13 @@ function PapersPage() {
 		<div className="paper-browser">
 			<header className="page-heading">
 				<div>
-					<div className="eyebrow-label">Research index / papers</div>
-					<h1>Find a paper.</h1>
-					<p>Search the original survey and community submissions with the shared categorization scheme.</p>
+					<div className="eyebrow-label">KGQA Generalization / papers</div>
+					<h1>Paper catalog</h1>
+					<p>Search and compare the records currently bundled with this project.</p>
 				</div>
 				<Link className="button-primary" to="/add-paper">Add a paper <span aria-hidden="true">↗</span></Link>
 			</header>
+			<aside className="data-status-inline"><strong>Legacy catalog:</strong> the available records and filters still use the original XAI schema; KGQA metadata migration is pending.</aside>
 			<section className="filter-panel" aria-label="Paper filters">
 				<Filters />
 			</section>

@@ -30,7 +30,7 @@ function App() {
 		"Line Chart": {
 			withSelect: true,
 			element: <GrowthLineChart type={type} />,
-			description: "The line chart displays the increase in the number of papers on the subject of Explainable AI over time (accumulative). The filtering option on the right allows you to select a particular attribute so that its development over time can be observed. It should be noted that papers can have multiple labels within a category so the sum of labels is greater than the number of papers in the database.",
+			description: "The line chart displays the cumulative number of papers over time. Select a metadata field to compare how its labels develop. Papers can have multiple labels, so category totals may exceed the number of records.",
 		},
 		"Bar Chart": {
 			withSelect: true,
@@ -40,23 +40,24 @@ function App() {
 		"Connected Graph": {
 			withSelect: false,
 			element: (<ConnectedChart />),
-			description: "The connected graph below displays papers as nodes in a graph. Papers are connected when they have many labels from our categorization in common. Filtering options can be applied and the nodes can be clicked to reveal a link to the particular paper."
+			description: "The connected graph displays papers as nodes. Papers are linked when they share multiple labels in the current catalog. Apply filters, then select a node to open its paper."
 		},
 		"Circle Packing": {
 			withSelect: true,
 			element: <CirclePackingChart type={type} />,
-			description: "The circle packing chart clusters the papers on Explainable AI based on a specific attribute. Select an attribute on the right. Each of the circles can be hovered over to see the title of the paper and clicked on to go to the paper itself."
+			description: "The circle packing chart groups papers by a selected attribute. Hover over a circle to see the paper title, or select it to open the paper."
 		},
 	}
 	return (
 		<div className="charts-page">
 			<header className="page-heading">
 				<div>
-					<div className="eyebrow-label">Research index / charts</div>
-					<h1>Read the landscape.</h1>
-					<p>Compare the collection over time or explore how its categories relate.</p>
+					<div className="eyebrow-label">KGQA Generalization / charts</div>
+					<h1>Charts & patterns</h1>
+					<p>Compare records over time or explore how the current metadata categories relate.</p>
 				</div>
 			</header>
+			<aside className="data-status-inline"><strong>Legacy catalog:</strong> these charts summarize the original XAI records until KGQA data and metadata are migrated.</aside>
 			<section className="charts-filters filter-panel" aria-label="Chart filters">
 				<Filters />
 			</section>

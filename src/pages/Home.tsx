@@ -5,57 +5,40 @@ import {
 	ArrowUpRightOutlined,
 	CheckCircleOutlined,
 	FileAddOutlined,
-	FilterOutlined
+	FilterOutlined,
+	ShareAltOutlined
 } from "@ant-design/icons"
 import { githubUrl } from "../utils"
 
-const citation = `@article{Nauta2023_csur_evaluating-xai-survey,
-  author = {Nauta, Meike and Trienes, Jan and Pathak, Shreyasi and Nguyen, Elisa and Peters, Michelle and Schmitt, Yasmin and Schlötterer, Jörg and van Keulen, Maurice and Seifert, Christin},
-  title = {From Anecdotal Evidence to Quantitative Evaluation Methods: A Systematic Review on Evaluating Explainable AI},
-  year = {2023},
-  journal = {ACM Computing Surveys},
-  doi = {10.1145/3583558}
-}`
+const focusAreas = [
+	{ number: "01", title: "Unseen entities", description: "Can a system answer when the question names entities absent from training?" },
+	{ number: "02", title: "Unseen relations", description: "How well does it handle graph predicates it has not encountered before?" },
+	{ number: "03", title: "New compositions", description: "Can known facts and relations be combined in unfamiliar ways?" },
+	{ number: "04", title: "Evaluation settings", description: "Which splits and protocols make generalization measurable?" }
+]
 
-type WorkflowStep = {
-	number: string
-	Icon: React.ComponentType<any>
-	title: string
-	text: string
-	link: JSX.Element
-}
-
-const steps: WorkflowStep[] = [
+const workflow = [
 	{
 		number: "01",
 		Icon: FilterOutlined,
 		title: "Explore",
-		text: "Search and filter the collection, or compare patterns across its categories.",
-		link: <Link to="/papers">Find a paper <ArrowRightOutlined aria-hidden="true" /></Link>
+		text: "Search the paper catalog and narrow results with the available filters.",
+		link: <Link to="/papers">Browse papers <ArrowRightOutlined aria-hidden="true" /></Link>
 	},
 	{
 		number: "02",
 		Icon: FileAddOutlined,
 		title: "Contribute",
-		text: "Classify a paper with the shared scheme and generate a database entry.",
+		text: "Prepare a paper record and share it with the project through a pull request.",
 		link: <Link to="/add-paper">Add a paper <ArrowRightOutlined aria-hidden="true" /></Link>
 	},
 	{
 		number: "03",
 		Icon: CheckCircleOutlined,
 		title: "Review",
-		text: "Verify new submissions and their labels. Three positive reviews add a paper.",
+		text: "Check new records and help keep the research index reliable.",
 		link: <a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Review on GitHub <ArrowUpRightOutlined aria-hidden="true" /></a>
 	}
-]
-
-const dimensions: Array<[string, string, string]> = [
-	["01", "Type of data", "Graph · Image · Text · More"],
-	["02", "Type of problem", "Model · Outcome · Inspection"],
-	["03", "Model to explain", "Neural · Tree · Model-agnostic"],
-	["04", "Type of task", "Classification · Recommendation"],
-	["05", "Type of explanation", "Feature importance · Text · Graph"],
-	["06", "Method used", "Post-hoc · Built-in · Supervised"]
 ]
 
 function Home(): JSX.Element {
@@ -63,28 +46,39 @@ function Home(): JSX.Element {
 		<div className="home-page">
 			<section className="home-hero">
 				<div className="home-hero-copy">
-					<div className="eyebrow"><span className="eyebrow-dot" /> An open research index <span className="eyebrow-divider" /> 2014—2020 · community curated</div>
-					<h1>A living map of<br /><em>explainable AI.</em></h1>
-					<p className="home-intro">Explore the methods, papers, and categories that shape explainable artificial intelligence. Built from a systematic review and extended by its research community.</p>
+					<div className="eyebrow"><span className="eyebrow-dot" /> OPEN RESEARCH WORKBENCH <span className="eyebrow-divider" /> KGQA</div>
+					<h1>KGQA<br /><span>Generalization</span></h1>
+					<p className="home-intro">A shared research index for understanding how knowledge graph question answering systems work beyond the entities, relations, and question patterns seen during training.</p>
 					<div className="home-actions">
-						<Link className="button-primary" to="/papers">Browse papers <ArrowRightOutlined aria-hidden="true" /></Link>
-						<Link className="text-link" to="/add-paper">Contribute <ArrowUpRightOutlined aria-hidden="true" /></Link>
+						<Link className="button-primary" to="/papers">Explore papers <ArrowRightOutlined aria-hidden="true" /></Link>
+						<Link className="text-link" to="/charts">View charts <ArrowUpRightOutlined aria-hidden="true" /></Link>
 					</div>
-					<p className="home-citation">Based on <a href="https://doi.org/10.1145/3583558" target="_blank" rel="noreferrer">Nauta et al., ACM Computing Surveys (2023)</a></p>
+					<p className="home-citation">Generalization settings include unseen knowledge base elements and new compositions. <a href="https://aclanthology.org/2025.emnlp-main.442/" target="_blank" rel="noreferrer">Read a recent study <ArrowUpRightOutlined aria-hidden="true" /></a></p>
 				</div>
-				<figure className="home-taxonomy-figure">
-					<div className="figure-heading"><span>The categorization scheme</span><span>01 / 06</span></div>
-					<div className="taxonomy-image-wrap">
-						<img src={`${process.env.PUBLIC_URL}/categories_xai.png`} alt="The six dimensions used to categorize papers in the XAI collection" />
+
+				<div className="generalization-map" aria-label="KGQA generalization research areas">
+					<div className="figure-heading"><span>Research dimensions</span><span>01 / 04</span></div>
+					<div className="map-hub"><ShareAltOutlined aria-hidden="true" /><span>KGQA</span><small>GENERALIZATION</small></div>
+					<div className="map-areas">
+						{focusAreas.map((area) => (
+							<div className="map-area" key={area.number}>
+								<span>{area.number}</span><strong>{area.title}</strong>
+							</div>
+						))}
 					</div>
-					<figcaption>Six dimensions make each paper easier to find and compare.</figcaption>
-				</figure>
+					<p className="map-caption">A working lens for organizing papers, benchmarks, and evaluation settings.</p>
+				</div>
 			</section>
 
+			<aside className="data-status-note" aria-label="Catalog data status">
+				<span className="status-indicator" aria-hidden="true" />
+				<div><strong>Catalog migration in progress</strong><p>This project is rebranded for KGQA Generalization. The bundled records and metadata fields still come from the original XAI catalog.</p></div>
+			</aside>
+
 			<section className="home-workflow" aria-labelledby="workflow-title">
-				<div className="section-kicker"><span id="workflow-title">How to use the collection</span><span>01 — 03</span></div>
+				<div className="section-kicker"><span id="workflow-title">Workbench</span><span>01 — 03</span></div>
 				<div className="workflow-grid">
-					{steps.map(({ number, Icon, title, text, link }) => (
+					{workflow.map(({ number, Icon, title, text, link }) => (
 						<article className="workflow-item" key={number}>
 							<span className="workflow-number">{number}</span>
 							<Icon className="workflow-icon" aria-hidden="true" />
@@ -96,44 +90,36 @@ function Home(): JSX.Element {
 				</div>
 			</section>
 
-			<section className="taxonomy-section" aria-labelledby="taxonomy-title">
+			<section className="taxonomy-section" aria-labelledby="focus-title">
 				<div className="taxonomy-intro">
-					<div className="eyebrow">A shared language</div>
-					<h2 id="taxonomy-title">Six dimensions.<br />One clearer picture.</h2>
-					<p>Each paper is categorized along the scheme presented by <a href="https://doi.org/10.1145/3583558" target="_blank" rel="noreferrer">Nauta et al. (2023)</a>.</p>
-					<Link className="text-link" to="/charts">Explore the charts <ArrowRightOutlined aria-hidden="true" /></Link>
+					<div className="eyebrow">A starting framework</div>
+					<h2 id="focus-title">Where should a system generalize?</h2>
+					<p>These dimensions are an initial way to read the literature. The project can refine them as its KGQA dataset and taxonomy are established.</p>
+					<Link className="text-link" to="/papers">Search the catalog <ArrowRightOutlined aria-hidden="true" /></Link>
 				</div>
 				<ol className="dimension-list">
-					{dimensions.map(([number, title, labels]) => (
-						<li key={number}><span>{number}</span><strong>{title}</strong><small>{labels}</small></li>
+					{focusAreas.map(({ number, title, description }) => (
+						<li key={number}><span>{number}</span><strong>{title}</strong><small>{description}</small></li>
 					))}
 				</ol>
 			</section>
 
-			<section className="collection-notes" aria-label="About the collection">
+			<section className="collection-notes" aria-label="Project notes">
 				<article>
-					<div className="eyebrow">The initial collection</div>
-					<p>Research papers published in 2014–2020 at AAAI, IJCAI, NeurIPS, ICML, ICLR, CVPR, ICCV, ACL, WWW, ICDM, KDD, and SIGIR.</p>
+					<div className="eyebrow">Research focus</div>
+					<p>Knowledge graph question answering, with attention to transfer beyond familiar graph elements and question patterns.</p>
 				</article>
 				<article>
-					<div className="eyebrow">A living collection</div>
-					<p>Contributors can add a paper, generate its database entry, and include it in a pull request.</p>
-					<Link to="/add-paper">Start a contribution <ArrowRightOutlined aria-hidden="true" /></Link>
+					<div className="eyebrow">Current records</div>
+					<p>The source repository still contains its original explainable AI paper collection. KGQA records will need to be imported into a dedicated schema.</p>
+					<Link to="/papers">View current records <ArrowRightOutlined aria-hidden="true" /></Link>
 				</article>
 				<article>
-					<div className="eyebrow">A curated collection</div>
-					<p>Community members review each paper and its categorization. Three positive reviews—or one from an admin—merge the request.</p>
+					<div className="eyebrow">Community curation</div>
+					<p>Use GitHub pull requests to propose and review updates to the collection.</p>
 					<a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Open pull requests <ArrowUpRightOutlined aria-hidden="true" /></a>
 				</article>
 			</section>
-
-			<details className="citation-details">
-				<summary>Paper and citation <span>Open BibTeX</span></summary>
-				<div className="citation-copy">
-					<p>This website is based on the systematic review by Meike Nauta, Jan Trienes, Shreyasi Pathak, Elisa Nguyen, Michelle Peters, Yasmin Schmitt, Jörg Schlötterer, Maurice van Keulen, and Christin Seifert.</p>
-					<pre>{citation}</pre>
-				</div>
-			</details>
 		</div>
 	)
 }

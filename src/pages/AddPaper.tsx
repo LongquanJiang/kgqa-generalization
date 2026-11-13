@@ -149,16 +149,17 @@ function AddPaper() {
 		<div className="addpaper">
 			<header className="page-heading add-paper-heading">
 				<div>
-					<div className="eyebrow-label">Research index / contribute</div>
-					<h1>Add to the collection.</h1>
-					<p>Classify a paper with the shared scheme, generate its database entry, then include it in a pull request.</p>
+					<div className="eyebrow-label">KGQA Generalization / contribute</div>
+					<h1>Add a paper</h1>
+					<p>Prepare a paper record, generate its database entry, and propose it through a pull request.</p>
 				</div>
 				<a className="button-outline" href="https://github.com/utwente-dmb/xai-papers/blob/master/src/db/db.json" target="_blank" rel="noreferrer">
 					Open database <span aria-hidden="true">↗</span>
 				</a>
 			</header>
+			<aside className="data-status-inline"><strong>Schema migration pending:</strong> this form currently generates entries using the original XAI fields. Wait for the KGQA metadata schema before using it for KGQA records.</aside>
 			<div className="contribution-intro">
-				<p>The original collection classifies over 300 research papers. New entries follow the same schema and are added to the project through a pull request.</p>
+				<p>Existing records follow the source repository's original classification. A generated entry can be reviewed in the preview and proposed through a pull request.</p>
 				<div className="contribution-steps" aria-label="Contribution flow">
 					<span><b>01</b> Describe the paper</span>
 					<span><b>02</b> Generate JSON</span>
