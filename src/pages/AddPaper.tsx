@@ -153,7 +153,7 @@ function AddPaper() {
 					<h1>Add a paper</h1>
 					<p>Prepare a paper record, generate its database entry, and propose it through a pull request.</p>
 				</div>
-				<a className="button-outline" href="https://github.com/utwente-dmb/xai-papers/blob/master/src/db/db.json" target="_blank" rel="noreferrer">
+				<a className="button-outline" href="https://github.com/longquanjiang/kgqa-generalization/blob/master/src/db/db.json" target="_blank" rel="noreferrer">
 					Open database <span aria-hidden="true">↗</span>
 				</a>
 			</header>
