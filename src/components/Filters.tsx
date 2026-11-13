@@ -48,7 +48,7 @@ function Filters(): JSX.Element {
 	function handleFilterChange(event: RadioChangeEvent) {
 		dispatch(filtersActions.changeState(event.target.value === "AND"))
 	}
-
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function handleYearChange(value: any) {
 		const startYear = value?.[0]?.year()
 		const endYear = value?.[1]?.year()

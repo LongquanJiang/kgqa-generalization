@@ -45,6 +45,7 @@ function CustomSelect<T>({ placeholder, enumerator, handleChange, value, span, s
 				style={{ width: "100%" }}
 				placeholder={placeholder}
 				value={defaultValue}
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				onChange={handleChange as any}
 				labelInValue={true}
 				tagRender={tagRender}
