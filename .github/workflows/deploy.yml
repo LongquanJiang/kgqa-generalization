@@ -1,4 +1,3 @@
-
 name: Deploy GitHub Pages
 
 on:
@@ -36,15 +35,11 @@ jobs:
 
       - name: Build
         run: npm run build
-      
-      - name: Debug build output
+
+      - name: Verify build output
         run: |
-          echo "Current directory:"
-          pwd
-          echo "Root directory:"
           ls -la
-          echo "Build directories:"
-          find . -maxdepth 2 -type d \( -name dist -o -name build \)
+          ls -la build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
