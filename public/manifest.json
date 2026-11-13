@@ -1,15 +1,15 @@
 {
-  "short_name": "KGQA Generalization",
-  "name": "KGQA Generalization Research Workbench",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src": "kgqa-icon.svg",
+      "src": "UT_LOGO_Vertical_Black.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg+xml"
+      "type": "image/x-icon"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#218cf0",
-  "background_color": "#f1f5f8"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

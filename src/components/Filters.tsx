@@ -74,9 +74,9 @@ function Filters(): JSX.Element {
 	}
 
 	return (
-		<Row className="filters-grid" gutter={[8, 8]} justify="center" style={{ marginBottom: 12 }}>
+		<Row gutter={[4, 4]} justify="center" style={{ marginBottom: 12 }}>
 			{/* First row of the filters */}
-			<Col span={5}>
+			<Col span={8}>
 				<Form.Item
 					label="State of Filter"
 					tooltip={{
@@ -92,13 +92,13 @@ function Filters(): JSX.Element {
 			</Col>
 			
 			{/* Reset Filters button */}
-			<Col span={3}>
+			<Col span={8}>
 				<Button onClick={handleReset}>Reset Filters</Button>
 			</Col>
-			<Col span={8}>
+			<Col span={4}>
 				<Checkbox onChange={handleShowOriginal} checked={filters.showOriginal}>Show Original Papers from Survey</Checkbox>
 			</Col>
-			<Col span={8}>
+			<Col span={4}>
 				<Checkbox onChange={handleShowNew} checked={filters.showNew}>Show New Papers from Community</Checkbox>
 			</Col>
 
