@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import {
 	ArrowRightOutlined,
-	ArrowUpRightOutlined,
+	ExportOutlined,
 	CheckCircleOutlined,
 	FileAddOutlined,
 	FilterOutlined,
@@ -37,7 +37,7 @@ const workflow = [
 		Icon: CheckCircleOutlined,
 		title: "Review",
 		text: "Check new records and help keep the research index reliable.",
-		link: <a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Review on GitHub <ArrowUpRightOutlined aria-hidden="true" /></a>
+		link: <a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Review on GitHub <ExportOutlined aria-hidden="true" /></a>
 	}
 ]
 
@@ -51,9 +51,9 @@ function Home(): JSX.Element {
 					<p className="home-intro">A shared research index for understanding how knowledge graph question answering systems work beyond the entities, relations, and question patterns seen during training.</p>
 					<div className="home-actions">
 						<Link className="button-primary" to="/papers">Explore papers <ArrowRightOutlined aria-hidden="true" /></Link>
-						<Link className="text-link" to="/charts">View charts <ArrowUpRightOutlined aria-hidden="true" /></Link>
+						<Link className="text-link" to="/charts">View charts <ExportOutlined aria-hidden="true" /></Link>
 					</div>
-					<p className="home-citation">Generalization settings include unseen knowledge base elements and new compositions. <a href="https://aclanthology.org/2025.emnlp-main.442/" target="_blank" rel="noreferrer">Read a recent study <ArrowUpRightOutlined aria-hidden="true" /></a></p>
+					<p className="home-citation">Generalization settings include unseen knowledge base elements and new compositions. <a href="https://aclanthology.org/2025.emnlp-main.442/" target="_blank" rel="noreferrer">Read a recent study <ExportOutlined aria-hidden="true" /></a></p>
 				</div>
 
 				<div className="generalization-map" aria-label="KGQA generalization research areas">
@@ -117,7 +117,7 @@ function Home(): JSX.Element {
 				<article>
 					<div className="eyebrow">Community curation</div>
 					<p>Use GitHub pull requests to propose and review updates to the collection.</p>
-					<a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Open pull requests <ArrowUpRightOutlined aria-hidden="true" /></a>
+					<a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Open pull requests <ExportOutlined aria-hidden="true" /></a>
 				</article>
 			</section>
 		</div>

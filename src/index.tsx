@@ -7,7 +7,7 @@ import { HashRouter, NavLink, Route, Routes, useLocation, useNavigate } from "re
 import { Provider } from "react-redux"
 import {
 	ArrowRightOutlined,
-	ArrowUpRightOutlined,
+	ExportOutlined,
 	DotChartOutlined,
 	HomeOutlined,
 	LeftOutlined,
@@ -65,7 +65,7 @@ function DefaultLayout() {
 				<div className="sidebar-footer">
 					<span className="sidebar-footer-kicker">RESEARCH WORKBENCH</span>
 					<span className="sidebar-footer-title">KGQA Generalization</span>
-					<a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Review contributions <ArrowUpRightOutlined aria-hidden="true" /></a>
+					<a href={`${githubUrl}/pulls`} target="_blank" rel="noreferrer">Review contributions <ExportOutlined aria-hidden="true" /></a>
 				</div>
 			</aside>
 
