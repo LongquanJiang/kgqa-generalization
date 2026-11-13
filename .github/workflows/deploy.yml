@@ -36,6 +36,15 @@ jobs:
 
       - name: Build
         run: npm run build
+      
+      - name: Debug build output
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Root directory:"
+          ls -la
+          echo "Build directories:"
+          find . -maxdepth 2 -type d \( -name dist -o -name build \)
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
