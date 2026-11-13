@@ -6,7 +6,7 @@ import { Paper } from "../../types"
 import { typeArray } from "../../utils"
 import { NoDataText } from "./index" 
 
-const { ZoomCanvas, DragCanvas, ClickSelect } = Behaviors
+const { ZoomCanvas, DragCanvas } = Behaviors
 
 function CreateGraphData() {
 	const papers = useFilteredPapers()
