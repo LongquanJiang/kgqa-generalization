@@ -17,27 +17,27 @@ function Filters(): JSX.Element {
 	const filters = useAppSelector((state) => state.filters)
 	const dispatch = useAppDispatch()
 
-	function handleDataChange(value: Array<SelectValue<typeof Data>>) {
+	function handleDataChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setData(fromSelectValue(value)))
 	}
 
-	function handleProblemChange(value: Array<SelectValue<typeof Problem>>) {
+	function handleProblemChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setProblem(fromSelectValue(value)))
 	}
 
-	function handleModelChange(value: Array<SelectValue<typeof Model>>) {
+	function handleModelChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setModel(fromSelectValue(value)))
 	}
 
-	function handleTaskChange(value: Array<SelectValue<typeof Task>>) {
+	function handleTaskChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setTask(fromSelectValue(value)))
 	}
 
-	function handleExplanationChange(value: Array<SelectValue<typeof Explanation>>) {
+	function handleExplanationChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setExplanation(fromSelectValue(value)))
 	}
 
-	function handleMethodChange(value: Array<SelectValue<typeof Method>>) {
+	function handleMethodChange(value: Array<SelectValue<string>>) {
 		dispatch(filtersActions.setMethod(fromSelectValue(value)))
 	}
 
@@ -49,7 +49,7 @@ function Filters(): JSX.Element {
 		dispatch(filtersActions.changeState(event.target.value === "AND"))
 	}
 
-	function handleYearChange(value: any) {
+	function handleYearChange(value: Parameters<NonNullable<React.ComponentProps<typeof RangePicker>["onChange"]>>[0]) {
 		const startYear = value?.[0]?.year()
 		const endYear = value?.[1]?.year()
 

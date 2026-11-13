@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Problem, Method, Data, Task, Explanation, Model, Paper, Venue } from "../../types"
+import { Paper, Venue } from "../../types"
 
 
 const initialState: Paper & { Comment?: string } = {
@@ -43,22 +43,22 @@ const formSlice = createSlice({
 		setVenue(state, action: PayloadAction<Venue | string>) {
 			state.Venue.value = action.payload
 		},
-		setData(state, action: PayloadAction<Array<typeof Data>>) {
+		setData(state, action: PayloadAction<Array<string>>) {
 			state["Type of Data"] = action.payload
 		},
-		setProblem(state, action: PayloadAction<Array<typeof Problem>>) {
+		setProblem(state, action: PayloadAction<Array<string>>) {
 			state["Type of Problem"] = action.payload
 		},
-		setModel(state, action: PayloadAction<Array<typeof Model>>) {
+		setModel(state, action: PayloadAction<Array<string>>) {
 			state["Type of Model to be Explained"] = action.payload
 		},
-		setTask(state, action: PayloadAction<Array<typeof Task>>) {
+		setTask(state, action: PayloadAction<Array<string>>) {
 			state["Type of Task"] = action.payload
 		},
-		setExplanation(state, action: PayloadAction<Array<typeof Explanation>>) {
+		setExplanation(state, action: PayloadAction<Array<string>>) {
 			state["Type of Explanation"] = action.payload
 		},
-		setMethod(state, action: PayloadAction<Array<typeof Method>>) {
+		setMethod(state, action: PayloadAction<Array<string>>) {
 			state["Method used to explain"] = action.payload
 		},
 		setAbstract(state, action: PayloadAction<string>) {

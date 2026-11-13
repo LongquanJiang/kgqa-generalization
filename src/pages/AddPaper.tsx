@@ -102,27 +102,27 @@ function AddPaper() {
 		dispatch(formActions.setVenue(venue))
 	}
 
-	function handleChangeData(value: Array<SelectValue<typeof Data>>) {
+	function handleChangeData(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setData(fromSelectValue(value)))
 	}
 
-	function handleChangeProblem(value: Array<SelectValue<typeof Problem>>) {
+	function handleChangeProblem(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setProblem(fromSelectValue(value)))
 	}
 
-	function handleChangeModel(value: Array<SelectValue<typeof Model>>) {
+	function handleChangeModel(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setModel(fromSelectValue(value)))
 	}
 
-	function handleChangeTask(value: Array<SelectValue<typeof Task>>) {
+	function handleChangeTask(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setTask(fromSelectValue(value)))
 	}
 
-	function handleChangeExplanation(value: Array<SelectValue<typeof Explanation>>) {
+	function handleChangeExplanation(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setExplanation(fromSelectValue(value)))
 	}
 
-	function handleChangeMethod(value: Array<SelectValue<typeof Method>>) {
+	function handleChangeMethod(value: Array<SelectValue<string>>) {
 		dispatch(formActions.setMethod(fromSelectValue(value)))
 	}
 

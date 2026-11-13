@@ -1,6 +1,7 @@
 import { Select, Col, Tag } from "antd"
 import { Paper, SelectValue } from "../types"
 import { getColor, toSelectValue } from "../utils"
+import type { ComponentProps } from "react"
 
 const { Option } = Select
 
@@ -28,7 +29,7 @@ function tagRender<T>({ label, closable, onClose, value }: TagRenderProps<T>) {
 
 type FilterProps<T> = {
 	placeholder: string, 
-	enumerator: Record<number, string>,
+	enumerator: Record<string, string>,
 	handleChange: ((val: Array<SelectValue<T>>) => void) | ((val?: SelectValue<T>) => void), // Non-Array val type is for if single is true
 	value: Array<T>
     span?: number, // Span means the width for ant design. span of 24 means a width of 100%
@@ -45,7 +46,7 @@ function CustomSelect<T>({ placeholder, enumerator, handleChange, value, span, s
 				style={{ width: "100%" }}
 				placeholder={placeholder}
 				value={defaultValue}
-				onChange={handleChange as any}
+				onChange={handleChange as ComponentProps<typeof Select>["onChange"]}
 				labelInValue={true}
 				tagRender={tagRender}
 				allowClear

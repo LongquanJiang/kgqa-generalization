@@ -1,15 +1,20 @@
 import { useLayoutEffect, useRef, useState } from "react"
 
-export function useExpandingAllInTable(keys: any, keyName: any, defaultExpanded: any) {
-	const [expandedKeys, setExpandedKeys] = useState(defaultExpanded ? keys : [])
-	const lastExpandEventHandler = useRef<any>(null)
+export function useExpandingAllInTable<Key extends string | number>(
+	keys: Key[],
+	keyName: string,
+	defaultExpanded: boolean
+) {
+	const [expandedKeys, setExpandedKeys] = useState<Key[]>(defaultExpanded ? keys : [])
+	const lastExpandEventHandler = useRef<(() => void) | null>(null)
 	const isAllExpanded = () => expandedKeys.length === keys.length
 
-	function toggleRowExpanded(expanded: any, record: any) {
+	function toggleRowExpanded(expanded: boolean, record: object) {
+		const recordKey = (record as Record<string, Key>)[keyName]
 		if (expanded) {
-			setExpandedKeys(expandedKeys.concat([record[keyName]]))
+			setExpandedKeys(expandedKeys.concat([recordKey]))
 		} else {
-			setExpandedKeys(expandedKeys.filter((item: any) => item !== record[keyName]))
+			setExpandedKeys(expandedKeys.filter((item) => item !== recordKey))
 		}
 	}
 

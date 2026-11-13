@@ -4,25 +4,31 @@ import { isSomeEnum, isEnumArray } from "./utils"
 
 // Function that checks if an object is of type Paper. 
 // Uses typescript typeguards to ensure that objects that pass the checks are actually given type Paper
-export function isPaper(paper: any): paper is Paper {
-	return "url" in paper 
-        && "Title" in paper 
-        && "Year" in paper 
-        && "Venue" in paper 
-		&& (paper["Venue"]["isOld"] && isSomeEnum(Venue)(paper["Venue"]["value"]) || !paper["Venue"]["isOld"])
-        && "Authors" in paper 
-        && "Type of Data" in paper
-        && isEnumArray(Data)(paper["Type of Data"])
-        && "Type of Problem" in paper
-        && isEnumArray(Problem)(paper["Type of Problem"])
-        && "Type of Model to be Explained" in paper
-        && isEnumArray(Model)(paper["Type of Model to be Explained"])
-        && "Type of Task" in paper
-        && isEnumArray(Task)(paper["Type of Task"])
-        && "Type of Explanation" in paper
-        && isEnumArray(Explanation)(paper["Type of Explanation"])
-        && "Method used to explain" in paper
-        && isEnumArray(Method)(paper["Method used to explain"])
+export function isPaper(paper: unknown): paper is Paper {
+	if (typeof paper !== "object" || paper === null) {
+		return false
+	}
+
+	const candidate = paper as Record<string, unknown>
+	const venue = candidate["Venue"]
+	if (typeof venue !== "object" || venue === null) {
+		return false
+	}
+
+	const venueRecord = venue as Record<string, unknown>
+	return "url" in candidate
+		&& "Title" in candidate
+		&& "Year" in candidate
+		&& "isOld" in venueRecord
+		&& "value" in venueRecord
+		&& (venueRecord["isOld"] === true && isSomeEnum(Venue)(venueRecord["value"]) || venueRecord["isOld"] === false)
+		&& "Authors" in candidate
+		&& isEnumArray(Data)(candidate["Type of Data"])
+		&& isEnumArray(Problem)(candidate["Type of Problem"])
+		&& isEnumArray(Model)(candidate["Type of Model to be Explained"])
+		&& isEnumArray(Task)(candidate["Type of Task"])
+		&& isEnumArray(Explanation)(candidate["Type of Explanation"])
+		&& isEnumArray(Method)(candidate["Method used to explain"])
 }
 
 // Array of the type of X, used throughout the project for consistency

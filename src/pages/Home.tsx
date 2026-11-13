@@ -22,7 +22,7 @@ comment   = {https://utwente-dmb.github.io/xai-papers/},
 } `
 
 type TextIconProps = {
-	Icon: (props: any) => JSX.Element | null
+	Icon: typeof FilterOutlined
 	text: string
 	description: JSX.Element
 }
