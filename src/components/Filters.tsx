@@ -49,7 +49,7 @@ function Filters(): JSX.Element {
 		dispatch(filtersActions.changeState(event.target.value === "AND"))
 	}
 
-	function handleYearChange(value: any) {
+	function handleYearChange(value: [Moment | null, Moment | null] | null) {
 		const startYear = value?.[0]?.year()
 		const endYear = value?.[1]?.year()
 
