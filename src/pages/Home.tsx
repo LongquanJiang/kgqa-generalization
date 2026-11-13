@@ -47,7 +47,7 @@ function Home(): JSX.Element {
 			<section className="home-hero">
 				<div className="home-hero-copy">
 					<div className="eyebrow"><span className="eyebrow-dot" /> OPEN RESEARCH WORKBENCH <span className="eyebrow-divider" /> KGQA</div>
-					<h1>KGQA<br /><span>Generalization</span></h1>
+					<h1>Make Sense of<br /><span>KGQA Generalization</span></h1>
 					<p className="home-intro">A shared research index for understanding how knowledge graph question answering systems work beyond the entities, relations, and question patterns seen during training.</p>
 					<div className="home-actions">
 						<Link className="button-primary" to="/papers">Explore papers <ArrowRightOutlined aria-hidden="true" /></Link>
