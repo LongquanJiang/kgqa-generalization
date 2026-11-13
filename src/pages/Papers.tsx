@@ -133,7 +133,7 @@ function PapersPage() {
 				</div>
 				<Link className="button-primary" to="/add-paper">Add a paper <span aria-hidden="true">↗</span></Link>
 			</header>
-			<aside className="data-status-inline"><strong>Legacy catalog:</strong> the available records and filters still use the original XAI schema; KGQA metadata migration is pending.</aside>
+			{/* <aside className="data-status-inline"><strong>Legacy catalog:</strong> the available records and filters still use the original XAI schema; KGQA metadata migration is pending.</aside> */}
 			<section className="filter-panel" aria-label="Paper filters">
 				<Filters />
 			</section>

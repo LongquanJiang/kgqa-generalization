@@ -57,7 +57,7 @@ function App() {
 					<p>Compare records over time or explore how the current metadata categories relate.</p>
 				</div>
 			</header>
-			<aside className="data-status-inline"><strong>Legacy catalog:</strong> these charts summarize the original XAI records until KGQA data and metadata are migrated.</aside>
+			{/* <aside className="data-status-inline"><strong>Legacy catalog:</strong> these charts summarize the original XAI records until KGQA data and metadata are migrated.</aside> */}
 			<section className="charts-filters filter-panel" aria-label="Chart filters">
 				<Filters />
 			</section>

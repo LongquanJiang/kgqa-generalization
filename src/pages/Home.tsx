@@ -70,10 +70,10 @@ function Home(): JSX.Element {
 				</div>
 			</section>
 
-			<aside className="data-status-note" aria-label="Catalog data status">
+			{/* <aside className="data-status-note" aria-label="Catalog data status">
 				<span className="status-indicator" aria-hidden="true" />
 				<div><strong>Catalog migration in progress</strong><p>This project is rebranded for KGQA Generalization. The bundled records and metadata fields still come from the original XAI catalog.</p></div>
-			</aside>
+			</aside> */}
 
 			<section className="home-workflow" aria-labelledby="workflow-title">
 				<div className="section-kicker"><span id="workflow-title">Workbench</span><span>01 — 03</span></div>
