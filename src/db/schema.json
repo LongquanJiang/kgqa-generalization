@@ -87,12 +87,9 @@
             "Year",
             "Venue",
             "Authors",
-            "Type of Data",
-            "Type of Problem",
-            "Type of Model to be Explained",
-            "Type of Task",
-            "Type of Explanation",
-            "Method used to explain",
+            "Data Level Methods",
+            "Model Level Methods",
+            "Learning Level Methods",
             "Abstract"
         ]
     }
