@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { Paper } from "../../types"
 import { isPaper } from "../../utils"
-import papers from "../../db/db_ori.json" // Loading the papers from the db.json
+import papers from "../../db/db.json" // Loading the papers from the db.json
 
 const initialState: Array<Paper> = []
 
