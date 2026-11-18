@@ -10,7 +10,6 @@ var react_1 = require("react");
 var icons_1 = require("@ant-design/icons");
 var Item = antd_1.Form.Item;
 var TextArea = antd_1.Input.TextArea;
-var Panel = antd_1.Collapse.Panel;
 function isUrl(str) {
     var pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
         "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name

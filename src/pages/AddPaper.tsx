@@ -9,7 +9,6 @@ import { InfoCircleOutlined } from "@ant-design/icons"
 
 const { Item } = Form
 const { TextArea } = Input
-const { Panel } = Collapse
 
 
 function isUrl(str: string) {
