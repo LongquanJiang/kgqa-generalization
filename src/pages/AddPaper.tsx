@@ -119,7 +119,6 @@ function AddPaper() {
 					Open database <span aria-hidden="true">↗</span>
 				</a>
 			</header>
-			<aside className="data-status-inline"><strong>Schema migration pending:</strong> this form currently generates entries using the original XAI fields. Wait for the KGQA metadata schema before using it for KGQA records.</aside>
 			<div className="contribution-intro">
 				<p>Existing records follow the source repository&rsquo;s original classification. A generated entry can be reviewed in the preview and proposed through a pull request.</p>
 				<div className="contribution-steps" aria-label="Contribution flow">
@@ -216,9 +215,9 @@ function AddPaper() {
 			<details className="references-panel">
 				<summary>References cited in the categorization guidance</summary>
 
-				<p style={{margin: 0}}>[1] Philip Adler, Casey Falk, Sorelle A Friedler, Tionney Nix, Gabriel Rybeck, Carlos Scheidegger, Brandon Smith, and Suresh Venkatasubramanian. Auditing black-box models for indirect influence. Knowledge and Information Systems, 54(1):95&ndash;122, 2018.</p>
-				<p style={{margin: 0}}>[2] Sebastian Bach, Alexander Binder, Gr&eacute;goire Montavon, Frederick Klauschen, Klaus-Robert M&uuml;ller, and Wojciech Samek. On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation. PLOS ONE, 10(7):1&ndash;46, 07 2015.</p>
-				<p style={{margin: 0}}>[3] Oana-Maria Camburu, Tim Rockt&auml;schel, Thomas Lukasiewicz, and Phil Blunsom. e-snli: Natural language inference with natural language explanations. In Samy Bengio, Hanna M. Wallach, Hugo Larochelle, Kristen Grauman, Nicol&ograve; Cesa-Bianchi, and Roman Garnett, editors, Advances in Neural Information Processing Systems 31: Annual Conference on Neural Information Processing Systems 2018, NeurIPS 2018, December 3-8, 2018, 36 Nauta et al. Montr&eacute;al, Canada, pages 9560&ndash;9572, 2018.</p>
+				<p style={{margin: 0}}>[1] Zhenyu Li, Sunqi Fan, Yu Gu, Xiuxing Li, Zhichao Duan, Bowen Dong, Ning Liu, and Jianyong Wang. Flexkbqa: A flexible llm-powered framework for few-shot knowledge base question answering. In AAAI, vol. 38, no. 17, pp. 18608&ndash;18616. 2024.</p>
+				<p style={{margin: 0}}>[2] Mayur Patidar, Riya Sawhney, Avinash Singh, Biswajit Chatterjee, and Indrajit Bhattacharya. Few&ndash;shot transfer learning for knowledge base question answering: Fusing supervised models with in-context learning. In ACL, pp. 9147&ndash;9165. 2024.</p>
+				<p style={{margin: 0}}>[3] Xiang Huang, Jiayu Shen, Shanshan Huang, Sitao Cheng, Xiaxia Wang, and Yuzhong Qu. TARGA: Targeted synthetic data generation for practical reasoning over structured data. In ACL, pp. 2704&ndash;2726. 2025.</p>
 			</details>
 		</div>
 	)

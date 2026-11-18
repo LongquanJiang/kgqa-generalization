@@ -97,9 +97,6 @@ function AddPaper() {
             react_1["default"].createElement("a", { className: "button-outline", href: "https://github.com/longquanjiang/kgqa-generalization/blob/master/src/db/db.json", target: "_blank", rel: "noreferrer" },
                 "Open database ",
                 react_1["default"].createElement("span", { "aria-hidden": "true" }, "\u2197"))),
-        react_1["default"].createElement("aside", { className: "data-status-inline" },
-            react_1["default"].createElement("strong", null, "Schema migration pending:"),
-            " this form currently generates entries using the original XAI fields. Wait for the KGQA metadata schema before using it for KGQA records."),
         react_1["default"].createElement("div", { className: "contribution-intro" },
             react_1["default"].createElement("p", null, "Existing records follow the source repository\u2019s original classification. A generated entry can be reviewed in the preview and proposed through a pull request."),
             react_1["default"].createElement("div", { className: "contribution-steps", "aria-label": "Contribution flow" },
@@ -171,8 +168,8 @@ function AddPaper() {
                 : null),
         react_1["default"].createElement("details", { className: "references-panel" },
             react_1["default"].createElement("summary", null, "References cited in the categorization guidance"),
-            react_1["default"].createElement("p", { style: { margin: 0 } }, "[1] Philip Adler, Casey Falk, Sorelle A Friedler, Tionney Nix, Gabriel Rybeck, Carlos Scheidegger, Brandon Smith, and Suresh Venkatasubramanian. Auditing black-box models for indirect influence. Knowledge and Information Systems, 54(1):95\u2013122, 2018."),
-            react_1["default"].createElement("p", { style: { margin: 0 } }, "[2] Sebastian Bach, Alexander Binder, Gr\u00E9goire Montavon, Frederick Klauschen, Klaus-Robert M\u00FCller, and Wojciech Samek. On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation. PLOS ONE, 10(7):1\u201346, 07 2015."),
-            react_1["default"].createElement("p", { style: { margin: 0 } }, "[3] Oana-Maria Camburu, Tim Rockt\u00E4schel, Thomas Lukasiewicz, and Phil Blunsom. e-snli: Natural language inference with natural language explanations. In Samy Bengio, Hanna M. Wallach, Hugo Larochelle, Kristen Grauman, Nicol\u00F2 Cesa-Bianchi, and Roman Garnett, editors, Advances in Neural Information Processing Systems 31: Annual Conference on Neural Information Processing Systems 2018, NeurIPS 2018, December 3-8, 2018, 36 Nauta et al. Montr\u00E9al, Canada, pages 9560\u20139572, 2018."))));
+            react_1["default"].createElement("p", { style: { margin: 0 } }, "[1] Zhenyu Li, Sunqi Fan, Yu Gu, Xiuxing Li, Zhichao Duan, Bowen Dong, Ning Liu, and Jianyong Wang. Flexkbqa: A flexible llm-powered framework for few-shot knowledge base question answering. In AAAI, vol. 38, no. 17, pp. 18608\u201318616. 2024."),
+            react_1["default"].createElement("p", { style: { margin: 0 } }, "[2] Mayur Patidar, Riya Sawhney, Avinash Singh, Biswajit Chatterjee, and Indrajit Bhattacharya. Few\u2013shot transfer learning for knowledge base question answering: Fusing supervised models with in-context learning. In ACL, pp. 9147\u20139165. 2024."),
+            react_1["default"].createElement("p", { style: { margin: 0 } }, "[3] Xiang Huang, Jiayu Shen, Shanshan Huang, Sitao Cheng, Xiaxia Wang, and Yuzhong Qu. TARGA: Targeted synthetic data generation for practical reasoning over structured data. In ACL, pp. 2704\u20132726. 2025."))));
 }
 exports["default"] = AddPaper;
