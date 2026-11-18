@@ -12,7 +12,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Reinforcement Learning"
@@ -44,7 +44,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Reinforcement Learning"
@@ -74,7 +74,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Self-Supervised and Synthetic-data Training"
@@ -141,7 +141,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Self-Supervised and Synthetic-data Training"
@@ -168,7 +168,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Hybrid Supervised and In-context Learning"
@@ -199,7 +199,7 @@
       "Synthetic Data Generation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Supervised Fine-tuning and Multi-task Learning"
@@ -230,10 +230,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Translating natural language questions into SPARQL queries enables Knowledge Base querying for factual and up-to-date responses.However, existing datasets for this task are predominantly template-based, leading models to learn superficial mappings between question and query templates rather than developing true generalization capabilities.As a result, models struggle when encountering naturally phrased, template-free questions.This paper introduces FRASE (FRAme-based Semantic Enhancement), a novel approach that leverages Frame Semantic Role Labeling (FSRL) to overcome this limitation.In addition, we present LCQ1-Frame, LCQ2-Frame, and QALD-10-Frame, a suite of new datasets derived from LC-QuAD 1.0, LC-QuAD 2.0, and QALD-10, where each question is enriched using FRASE through frame detection and the mapping of frame-elements to their corresponding arguments.We evaluate our approach for the Question-2-SPARQL task through extensive experiments using recent large language models (LLMs) under different fine-tuning configurations.Our results demonstrate that integrating frame-based structured representations consistently improves SPARQL generation performance, particularly in challenging generalization scenarios when test questions feature unseen templates (unknown template splits) and when they are all naturally phrased (reformulated questions).Our code and data are available at https://github.com/Lama-West/FRASE-LREC-2026.",
     "Authors": [
@@ -258,7 +258,7 @@
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Dominant approaches to Knowledge Base Question Answering (KBQA) fall into two categories. First is the generation of a formal query that suffers from brittleness and limited explainability, and the second is direct answer retrieval through KB exploration that is computationally costly and prone to hallucination. To combine the strengths of both paradigms while mitigating their respective weaknesses, we introduce DeSQ (Decomposition-based SPARQL Query Generation), a KB-agnostic framework that operates in three stages. First, it decomposes complex questions into Atomic Constraints (ACs) that mirror the relational structure of the underlying KB. Second, it generates a two-part structured output: (a) Mapping of each AC to its corresponding SPARQL Fragment, using standardized variable and URIs placeholders, and (b) URIs Grounding block describing each placeholder. Third, it assembles these fragments into a complete SPARQL query. DeSQ surpasses state-of-the-art approaches on four out of five major benchmarks and demonstrates superior robustness to lexical variation. Beyond performance gains, our framework greatly simplifies evaluation by eliminating the need for a live KB endpoint, and its structured output enables fine-grained error analysis, allowing more targeted interventions for improvement.",
     "Authors": [
@@ -285,7 +285,7 @@
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Most existing Knowledge Graph Question Answering (KGQA) approaches are designed for a specific KG, such as Wikidata, DBpedia or Freebase. Due to the heterogeneity of the underlying graph schema, topology and assertions, most KGQA systems cannot be transferred to unseen Knowledge Graphs (KGs) without resource-intensive training data. We present OntoSCPrompt, a novel Large Language Model (LLM)-based KGQA approach with a two-stage architecture that separates semantic parsing from KG-dependent interactions. OntoSCPrompt first generates a SPARQL query structure (including SPARQL keywords such as SELECT, ASK, WHERE and placeholders for missing tokens) and then fills them with KG-specific information. To enhance the understanding of the underlying KG, we present an ontology-guided, hybrid prompt learning strategy that integrates KG ontology into the learning process of hybrid prompts (e.g., discrete and continuous vectors). We also present several task-specific decoding strategies to ensure the correctness and executability of generated SPARQL queries in both stages. Experimental results demonstrate that OntoSCPrompt performs as well as SOTA approaches without retraining on a number of KGQA datasets such as CWQ, WebQSP and LC-QuAD 1.0 in a resource-efficient manner and can generalize well to unseen domain-specific KGs like DBLP-QuAD and CoyPu KG11Code: https://github.com/LongquanJiang/OntoSCPrompt.",
     "Authors": [
@@ -309,10 +309,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Knowledge Graphs (KGs) have gained popularity as a means of storing structured data, with property graphs, in particular, gaining traction in recent years.Consequently, the task of semantic parsing remains crucial in enabling access to the information in these graphs via natural language queries.However, annotated data is scarce, requires significant effort to create, and is not easily transferable between different graphs.To address these challenges we introduce SPOT, a method to generate training data for semantic parsing over Property Graphs without human annotations.We generate tree patterns, match them to the KG to obtain a query program, and use a finite-state transducer to produce a proto-natural language realization of the query.Finally, we paraphrase the proto-NL with an LLM to generate samples for training a semantic parser.We demonstrate the effectiveness of SPOT on two property graph benchmarks utilizing the Cypher query language.In addition, we show that our approach can also be applied effectively to RDF graphs.",
     "Authors": [
@@ -336,10 +336,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "An essential requirement for a real-world Knowledge Base Question Answering (KBQA) system is the ability to detect answerability of questions when generating logical forms.However, state-of-the-art KBQA models assume all questions to be answerable.Recent research has found that such models, when superficially adapted to detect answerability, struggle to satisfactorily identify the different categories of unanswerable questions, and simultaneously preserve good performance for answerable questions.Towards addressing this issue, we propose RetinaQA, a new KBQA model that unifies two key ideas in a single KBQA architecture: (a) discrimination over candidate logical forms, rather than generating these, for handling schema-related unanswerability, and (b) sketch-filling-based construction of candidate logical forms for handling data-related unaswerability.Our results show that RetinaQA significantly outperforms adaptations of state-of-the-art KBQA models in handling both answerable and unanswerable questions and demonstrates robustness across all categories of unanswerability.Notably, Reti-naQA also sets a new state-of-the-art for answerable KBQA, surpassing existing models.We release our code-base 1 for further research.",
     "Authors": [
@@ -362,7 +362,7 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Contrastive and Discriminative Learning"
@@ -388,10 +388,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Subject to the huge semantic gap between natural and formal languages, neural semantic parsing is typically bottlenecked by its complexity of dealing with both input semantics and output syntax.Recent works have proposed several forms of supplementary supervision but none is generalized across multiple formal languages.This paper proposes a unified intermediate representation (IR) for graph query languages, named GraphQ IR.It has a natural-language-like expression that bridges the semantic gap and formally defined syntax that maintains the graph structure.Therefore, a neural semantic parser can more precisely convert user queries into GraphQ IR, which can be later losslessly compiled into various downstream graph query languages.Extensive experiments on several benchmarks including KQA PRO, OVERNIGHT, GRAILQA and METAQA-Cypher under standard i.i.d., out-of-distribution and low-resource settings validate GraphQ IR's superiority over the previous state-of-the-arts with a maximum 11% accuracy improvement.",
     "Authors": [
@@ -419,10 +419,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Srinivas Ravishankar, Dung Thai, Ibrahim Abdelaziz, Nandana Mihindukulasooriya, Tahira Naseem, Pavan Kapanipathi, Gaetano Rossiello, Achille Fokoue. Findings of the Association for Computational Linguistics: EMNLP 2022. 2022.",
     "Authors": [
@@ -450,10 +450,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Sumit Neelam, Udit Sharma, Hima Karanam, Shajith Ikbal, Pavan Kapanipathi, Ibrahim Abdelaziz, Nandana Mihindukulasooriya, Young-Suk Lee, Santosh Srivastava, Cezar Pendus, Saswati Dana, Dinesh Garg, Achille Fokoue, G P Shrivatsa Bhargav, Dinesh Khandelwal, Srinivas Ravishankar, Sairam Gurajada, Maria Chang, Rosario Uceda-Sosa, Salim Roukos, Alexander Gray, Guilherme Lima, Ryan Riegel, Francois Luus, L V Subramaniam. Findings of the Association for Computational Linguistics: EMNLP 2022. 2022.",
     "Authors": [
@@ -498,10 +498,10 @@
       "Unified Intermediate Representation"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Jiwei Ding, Wei Hu, Qixin Xu, Yuzhong Qu. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 2019.",
     "Authors": [
@@ -525,10 +525,10 @@
       "Schema-aware Context and Evidence Construction"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Yuhang Tian, Dandan Song, Zhijing Wu, Changzhi Zhou, Jun Yang, Huipeng Ma, Chenhao Li, Luan Zhang, Yading Li, Xudong Li, Shenxi Liu, Jing Jiang. Findings of the Association for Computational Linguistics: ACL 2026. 2026.",
     "Authors": [
@@ -564,7 +564,7 @@
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Knowledge Base Question Answering (KBQA) aims to answer user questions in natural language using rich human knowledge stored in large KBs.As current KBQA methods struggle with unseen knowledge base elements and their novel compositions at test time, we introduce SG-KBQA -a novel model that injects schema contexts into entity retrieval and logical form generation to tackle this issue.It exploits information about the semantics and structure of the knowledge base provided by schema contexts to enhance generalizability.We show that SG-KBQA achieves strong generalizability, outperforming state-of-the-art models on three commonly used benchmark datasets across a variety of test settings.Our source code is available at https://github. com/gaosx2000/SG_KBQA.",
     "Authors": [
@@ -587,10 +587,10 @@
       "Schema-aware Context and Evidence Construction"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Recent studies have explored the use of Large Language Models (LLMs) with Retrieval Augmented Generation (RAG) for Knowledge Graph Question Answering (KGQA).They typically require rewriting retrieved subgraphs into natural language formats comprehensible to LLMs.However, when tackling complex questions, the knowledge rewritten by existing methods may include irrelevant information, omit crucial details, or fail to align with the question's semantics.To address them, we propose a novel rewriting method CoTKR, Chain-of-Thought Enhanced Knowledge Rewriting, for generating reasoning traces and corresponding knowledge in an interleaved manner, thereby mitigating the limitations of single-step knowledge rewriting.Additionally, to bridge the preference gap between the knowledge rewriter and the question answering (QA) model, we propose a training strategy PAQAF, Preference Alignment from Question Answering Feedback, for leveraging feedback from the QA model to further optimize the knowledge rewriter.We conduct experiments using various LLMs across several KGQA benchmarks.Experimental results demonstrate that, compared with previous knowledge rewriting methods, CoTKR generates the most beneficial knowledge representation for QA models, which significantly improves the performance of LLMs in KGQA 1 .* Equal contribution.\u2020Corresponding author. 1 Our code is available at https://github.com/wuyike2000/CoTKR.Question: what is the unit of area that the measurement system that have an electric field strength units of volt per metre have?Answer: Square kilometer, Square meter KR Methods KR Results SummaryThe International System of Units includes various measurement systems for different physical quantities such as length, area, volume, conductance, resistance, current, force, and pressure.The measurement system with an electric field strength unit of Volt per meter does not directly relate to a specific area unit within the International System of Units.CoTKR Reason: I need to know the unit of area associated with the measurement system that has an electric field strength unit of Volt per meter.Summarize: The International System of Units includes various units for different physical quantities such as length, area, volume, etc. Reason: I need to find the specific unit of area in the International System of Units that corresponds to the electric field strength unit of Volt per meter.Summarize: The International System of Units includes units like Square kilometer, Square meter, etc. for measuring area.CoTKR+PA Reason: I need to know which measurement system includes the unit for electric field strength in Volt per meter.Knowledge: The International System of Units contains the unit for electric field strength in Volt per meter.Reason: I need to identify the unit of area within the International System of Units.Knowledge: The International System of Units includes the units Square kilometer and Square meter as area units.",
     "Authors": [
@@ -620,7 +620,7 @@
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Pre-trained language models (PLMs) have shown their effectiveness in multiple scenarios.However, KBQA remains challenging, especially regarding coverage and generalization settings.This is due to two main factors: i) understanding the semantics of both questions and relevant knowledge from the KB; ii) generating executable logical forms with both semantic and syntactic correctness.In this paper, we present a new KBQA model, TIARA, which addresses those issues by applying multi-grained retrieval to help the PLM focus on the most relevant KB contexts, viz., entities, exemplary logical forms, and schema items.Moreover, constrained decoding is used to control the output space and reduce generation errors.Experiments over important benchmarks demonstrate the effectiveness of our approach.TIARA outperforms previous SOTA, including those using PLMs or oracle entity annotations, by at least 4.1 and 1.1 F1 points on GrailQA and WebQuestionsSP, respectively.Specifically on GrailQA, TIARA outperforms previous models in all categories, with an improvement of 4.7 F1 points in zero-shot generalization. 1",
     "Authors": [
@@ -647,7 +647,7 @@
       "Schema-aware Context and Evidence Construction"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Contrastive and Discriminative Learning"
@@ -675,10 +675,10 @@
       "Schema-aware Context and Evidence Construction"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Shuang Chen, Qian Liu, Zhiwei Yu, Chin-Yew Lin, Jian-Guang Lou, Feng Jiang. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations. 2021.",
     "Authors": [
@@ -701,13 +701,13 @@
       "value": "TKDE"
     },
     "Data Level Mechanisms": [
-      "-"
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Large language models (LLMs) excel at reasoning but struggle with knowledge-intensive questions due to limited context and parametric knowledge. However, existing methods that rely on finetuned LLMs or GNN retrievers are limited by dataset-specific tuning and scalability on large or unseen graphs. We propose the LLM-KGFR collaborative framework, where an LLM works with a structured retriever, the Knowledge Graph Foundation Retriever (KGFR). KGFR encodes relations using LLM-generated descriptions and initializes entities based on their roles in the question, enabling zero-shot generalization to unseen KGs. To handle large graphs efficiently, it employs Asymmetric Progressive Propagation (APP)- a stepwise expansion that selectively limits high-degree nodes while retaining informative paths. Through node-, edge-, and path-level interfaces, the LLM iteratively requests candidate answers, supporting facts, and reasoning paths, forming a controllable reasoning loop. Experiments demonstrate that LLM-KGFR achieves strong performance while maintaining scalability and generalization, providing a practical solution for KG-augmented reasoning.",
     "Authors": [
@@ -728,7 +728,7 @@
       "value": "EMNLP"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Schema Decoupling and Grounding"
@@ -758,13 +758,13 @@
       "value": "ArXiv"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Complex knowledge base question answering (KBQA) is commonly approached through either information retrieval over a question-specific subgraph or semantic parsing into an executable logical form. We study the latter paradigm. Recent large language model agents make semantic parsing interactive: they alternate between reasoning, querying the knowledge base, and extending a partial SPARQL query. This interleaving reduces reliance on one-shot generation, but makes the quality of \\emph{KB grounding} depend on what the interaction tools expose. Existing agents retrieve or prune candidate properties mainly through lexical relevance and instance-level observations, without systematically conditioning on entity types, property domains and ranges, or the expected answer type. We call this failure mode \\emph{type-blind grounding}. It enlarges the grounding search space and often produces plausible-looking but semantically incompatible triple patterns that execute to empty results. We propose SAGA (\\underline{S}chema-\\underline{A}ware \\underline{G}rounding for \\underline{A}gentic Text-to-SPARQL Generation), a training-free framework that turns property exploration into a schema-constrained grounding operation. SAGA maintains a persistent bidirectional type state, filters known-incompatible property candidates at construction time, presents the remaining graph patterns in a compact schema-annotated format, and handles missing schema information permissively through empirical and trace-local evidence. Across nine benchmark settings over Wikidata and Freebase, SAGA achieves the highest F1 on all nine settings and the highest exact-match accuracy on eight, while reducing empty-result queries across all reported Wikidata settings.",
     "Authors": [
@@ -783,13 +783,13 @@
       "value": "PAKDD"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Schema Decoupling and Grounding"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "",
     "Authors": [
@@ -807,17 +807,22 @@
       "value": "ICLR"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
-    "Abstract": "",
+    "Abstract": "El SARS-CoV2 representa al pat\u00f3geno causante de una enfermedad altamente contagiosa y potencialmente mortal, denominada COVID-19. Dicha patolog\u00eda se ha extendido r\u00e1pidamente a nivel mundial, constituyendo un importante problema de salud p\u00fablica. La infecci\u00f3n por SARS-CoV-2 afecta principalmente al sistema respiratorio, pero tambi\u00e9n puede existir el compromiso de otros \u00f3rganos. En poblaci\u00f3n susceptible la enfermedad puede cursar con manifestaciones cl\u00ednicas graves, aumentando la tasa de complicaciones y tornando sombr\u00edo el pron\u00f3stico de estos individuos. Actualmente, el tratamiento es de soporte ya que no se cuenta con medicamentos terap\u00e9uticos espec\u00edficos que tengan evidencia s\u00f3lida para combatir la infecci\u00f3n por SARS-CoV-2. Es por ello, que la piedra angular para evitar la propagaci\u00f3n del nuevo coronavirus es la prevenci\u00f3n. Se realiza una revisi\u00f3n de la literatura con base en la actual evidencia publicada, con la esperanza de ayudar al p\u00fablico a reconocer y dilucidar los aspectos m\u00e1s relevantes de la infecci\u00f3n por SARS-CoV-2/COVID-19.",
     "Authors": [
-      ""
+      "Emilio Abuabara-Franco",
+      "Jos\u00e9 Boh\u00f3rquez-Rivero",
+      "J. Restom-Arrieta",
+      "Isabella Uparella-Gulfo",
+      "J. S\u00e1enz-L\u00f3pez",
+      "Jos\u00e9 Restom-Tinoco"
     ],
     "IsOld": true
   },
@@ -831,13 +836,13 @@
       "value": "AAAI"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Knowledge Base Question Answering (KBQA) aims to answer natural language questions using structured knowledge from KBs. While LLM-only approaches offer generalization, they suffer from outdated knowledge, hallucinations, and lack of transparency. Chain-based KG-RAG methods address these issues by incorporating external KBs, but are limited to simple chain-structured questions due to the absence of planning and logical structuring. Inspired by semantic parsing methods, we propose PDRR: a four-stage framework consisting of Predict, Decompose, Retrieve, and Reason. Our method first predicts the question type and decomposes the question into structured triples. Then retrieves relevant information from KBs and guides the LLM as an agent to reason over and complete the decomposed triples. Experimental results show that our proposed KBQA model, PDRR, consistently outperforms existing methods across different LLM backbones and achieves superior performance on various types of questions.",
     "Authors": [
@@ -858,13 +863,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "While Large Language Models (LLMs) excel at many natural language processing tasks, they often suffer from factual inaccuracies in knowledge-intensive scenarios.Integrating external knowledge resources, particularly knowledge graphs (KGs), provides a transparent and updatable foundation for more reliable reasoning.Knowledge Base Question Answering (KBQA), which queries and reasons over KGs, is central to this effort, especially for complex, multi-hop queries.However, multi-hop reasoning poses two key challenges: (1) maintaining coherent reasoning paths, and (2) avoiding prematurely discarding critical multi-hop connections.To address these issues, we introduce iQUEST, a question-guided KBQA framework that iteratively decomposes complex queries into simpler sub-questions, ensuring a structured and focused reasoning trajectory.Additionally, we integrate a Graph Neural Network (GNN) to look ahead and incorporate 2hop neighbor information at each reasoning step.This dual approach strengthens the reasoning process, enabling the model to explore viable paths more effectively.Detailed experiments demonstrate the consistent improvement delivered by iQUEST across four benchmark datasets and four LLMs.",
     "Authors": [
@@ -883,13 +888,13 @@
       "value": "NeurIPS"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Large Language Models (LLMs) have shown remarkable reasoning capabilities on complex tasks, but they still suffer from out-of-date knowledge, hallucinations, and opaque decision-making. In contrast, Knowledge Graphs (KGs) can provide explicit and editable knowledge for LLMs to alleviate these issues. Existing paradigm of KG-augmented LLM manually predefines the breadth of exploration space and requires flawless navigation in KGs. However, this paradigm cannot adaptively explore reasoning paths in KGs based on the question semantics and self-correct erroneous reasoning paths, resulting in a bottleneck in efficiency and effect. To address these limitations, we propose a novel self-correcting adaptive planning paradigm for KG-augmented LLM named Plan-on-Graph (PoG), which first decomposes the question into several sub-objectives and then repeats the process of adaptively exploring reasoning paths, updating memory, and reflecting on the need to self-correct erroneous reasoning paths until arriving at the answer. Specifically, three important mechanisms of Guidance, Memory, and Reflection are designed to work together, to guarantee the adaptive breadth of self-correcting planning for graph reasoning. Finally, extensive experiments on three real-world datasets demonstrate the effectiveness and efficiency of PoG.",
     "Authors": [
@@ -912,13 +917,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Compositional Reasoning and Planning"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Lingxi Zhang, Jing Zhang, Yanling Wang, Shulin Cao, Xinmei Huang, Cuiping Li, Hong Chen, Juanzi Li. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2023.",
     "Authors": [
@@ -943,13 +948,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Execution Feedback and Self-Correction"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Knowledge Base Question Answering (KBQA) leverages structured knowledge bases to offer superior interpretability and hallucination resistance, making it a critical technology for precise knowledge reasoning.However, the prevailing LLM-based generate-then-execute formulation of semantic parsing is limited by strict syntactic constraints, making it primarily prone to structural deviations that render queries unexecutable, while suffering from semantic deviations that yield incorrect execution results.To address these challenges, we propose the Execution as Verification (EVER) framework, reframing semantic parsing as an iterative, self-correcting reasoning process driven by execution feedback.First, motivated by the insight that query executability serves as a strong proxy for answer correctness, we introduce Fine-Grained Execution-Aware Planning.This mechanism decomposes complex semantic parsing into a sequence of stepwise reasoning processes oriented by executability verification, ensuring high query executability.We further design a Self-Guided Semantic Correction mechanism based on execution result verification, utilizing execution feedback to verify and calibrate semantic deviations, thereby ensuring the semantic correctness of executable queries.Experimental results on the WebQSP and CWQ datasets demonstrate that our method achieves significant improvements in both query executability and answer accuracy, achieving stateof-the-art performance, particularly in complex multi-hop scenarios.Our code is available at https://github.com/ahu-zmh/EVER.",
     "Authors": [
@@ -972,13 +977,13 @@
       "value": "ArXiv"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Execution Feedback and Self-Correction"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Recently, large language models (LLMs) have demonstrated remarkable capabilities in natural language processing tasks, yet they remain prone to hallucinations when reasoning with insufficient internal knowledge. While integrating LLMs with knowledge graphs (KGs) provides access to structured, verifiable information, existing approaches often generate incomplete or factually inconsistent reasoning paths. To this end, we propose Self-Reflective Planning (SRP), a framework that synergizes LLMs with KGs through iterative, reference-guided reasoning. Specifically, given a question and topic entities, SRP first searches for references to guide planning and reflection. In the planning process, it checks initial relations and generates a reasoning path. After retrieving knowledge from KGs through a reasoning path, it implements iterative reflection by judging the retrieval result and editing the reasoning path until the answer is correctly retrieved. Extensive experiments on three public datasets demonstrate that SRP surpasses various strong baselines and further underscore its reliable reasoning ability.",
     "Authors": [
@@ -1003,13 +1008,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Execution Feedback and Self-Correction"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Xiang Huang, Sitao Cheng, Shanshan Huang, Jiayu Shen, Yong Xu, Chaoyun Zhang, Yuzhong Qu. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
     "Authors": [
@@ -1033,13 +1038,13 @@
       "value": "EMNLP"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Execution Feedback and Self-Correction"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "The applications of large language models (LLMs) have expanded well beyond the confines of text processing, signaling a new era where LLMs are envisioned as generalist agents capable of operating within complex environments.These environments are often highly expansive, making it impossible for the LLM to process them within its short-term memory.Motivated by recent research on extending the capabilities of LLMs with tools, we seek to investigate the intriguing potential of tools to augment LLMs in handling such complexity by introducing a novel class of tools, termed middleware, to aid in the proactive exploration within these massive environments.Such specialized tools can serve as a middleware layer shielding the LLM from environmental complexity.In two representative complex environmentsknowledge bases (KBs) and databases-we demonstrate the significant potential of augmenting language agents with tools in complex environments.Notably, equipped with the middleware, GPT-4 achieves 2.8\u00d7 the performance of the best baseline in tasks requiring access to database content and 2.2\u00d7 in KB tasks.Our findings illuminate the path for advancing language agents in real-world applications.1",
     "Authors": [
@@ -1065,7 +1070,7 @@
       "value": "ICLR"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Search and Test-Time Scaling"
@@ -1099,13 +1104,13 @@
       "value": "AAAI"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Search and Test-Time Scaling"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Large Language Models (LLMs) may suffer from hallucinations in real-world applications due to the lack of relevant knowledge. In contrast, knowledge graphs encompass extensive, multi-relational structures that store a vast array of symbolic facts. Consequently, integrating LLMs with knowledge graphs has been extensively explored, with Knowledge Graph Question Answering (KGQA) serving as a critical touchstone for the integration. This task requires LLMs to answer natural language questions by retrieving relevant triples from knowledge graphs. However, existing methods face two significant challenges: *excessively long reasoning paths distracting from the answer generation*, and *false-positive relations hindering the path refinement*. In this paper, we propose an iterative interactive KGQA framework that leverages the interactive learning capabilities of LLMs to perform reasoning and Debating over Graphs (DoG). Specifically, DoG employs a subgraph-focusing mechanism, allowing LLMs to perform answer trying after each reasoning step, thereby mitigating the impact of lengthy reasoning paths. On the other hand, DoG utilizes a multi-role debate team to gradually simplify complex questions, reducing the influence of false-positive relations. This debate mechanism ensures the reliability of the reasoning process. Experimental results on five public datasets demonstrate the effectiveness and superiority of our architecture. Notably, DoG outperforms the state-of-the-art method ToG by 23.7% and 9.1% in accuracy on WebQuestions and GrailQA, respectively. Furthermore, the integration experiments with various LLMs on the mentioned datasets highlight the flexibility of DoG.",
     "Authors": [
@@ -1133,13 +1138,13 @@
       "value": "ICML"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Search and Test-Time Scaling"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "",
     "Authors": [
@@ -1157,13 +1162,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Experience Reuse and Memory"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Large language models (LLMs) often hallucinate in question answering (QA) tasks due to a lack of factual knowledge.While integrating knowledge graphs (KGs) with LLMs has alleviated this issue, existing methods suffer from poor generalization or low reasoning efficiency, and critically, they overlook the learning and reuse of reasoning paths from past experiences.To address these challenges, we introduce Thought-Action Graph (TAG), a structured repository of reasoning experiences.TAG decomposes successful LLM-KG interaction trajectories into fine-grained semantic operators, which are stored in TAG constructed by the thought layer and action layer.Building upon TAG, we propose a novel KGQA paradigm -TAG-Reasoning (TAGR).TAGR first retrieves and assembles reasoning blueprints from TAG, and then guides LLMs to efficiently execute on KG according to them.Through this approach, TAGR transforms the computationally expensive online exploration process of LLMs into an offline process of TAG retrieval and assembly.Experimental results on multiple KGQA benchmarks demonstrate that TAGR significantly outperforms state-of-theart methods across key metrics, while drastically reducing the number of LLM calls and generated tokens.This work \u2020 opens new avenues for building continual learning, efficient, and faithful KGQA systems.",
     "Authors": [
@@ -1189,13 +1194,13 @@
       "value": "ArXiv"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Multi-model Collaboration and Component Alignment"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Graph-based retrieval-augmented generation (RAG) enables large language models (LLMs) to ground responses with structured external knowledge from up-to-date knowledge graphs (KGs) and reduce hallucinations. However, LLMs often rely on a weak retriever in graph-based RAG: I) Due to the lack of ground truth, the retriever is often trained on weak supervision, which often introduces spurious signals to the LLMs. II) Due to the abstraction of graph data, the retrieved knowledge is often presented in unorganized forms. To mitigate the issue, we present Refined Graph-based RAG (ReG) to align weak retrievers to LLMs for graph-based RAG. Specifically, ReG incorporates LLM feedback to get rid of spurious signals and improve the quality of the supervision. Meanwhile, ReG introduces a structure-aware reorganization module to refactor the retrieval results into logically coherent evidence chains. Experiments on prominent benchmarks demonstrate that ReG significantly and consistently brings improvements across different LLM backbones by up to 10%. The improved supervision quality enables ReG to match the state-of-the-art performance with 5% training data and to transfer to out-of-distribution KGs. Notably, when adopted to reasoning-based LLMs, ReG reduces the reasoning token cost by up to 30% and improves the performance by up to 4%.",
     "Authors": [
@@ -1222,13 +1227,13 @@
       "value": "COLING"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Multi-model Collaboration and Component Alignment"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "While large language models (LLMs) have shown remarkable capabilities in natural language processing, they struggle with complex, multi-step reasoning tasks involving knowledge graphs (KGs). Existing approaches that integrate LLMs and KGs either underutilize the reasoning abilities of LLMs or suffer from prohibitive computational costs due to tight coupling. To address these limitations, we propose a novel collaborative framework named EffiQA that can strike a balance between performance and efficiency via an iterative paradigm. EffiQA consists of three stages: global planning, efficient KG exploration, and self-reflection. Specifically, EffiQA leverages the commonsense capability of LLMs to explore potential reasoning pathways through global planning. Then, it offloads semantic pruning to a small plug-in model for efficient KG exploration. Finally, the exploration results are fed to LLMs for self-reflection to further improve the global planning and efficient KG exploration. Empirical evidence on multiple KBQA benchmarks shows EffiQA's effectiveness, achieving an optimal balance between reasoning accuracy and computational costs. We hope the proposed new framework will pave the way for efficient, knowledge-intensive querying by redefining the integration of LLMs and KGs, fostering future research on knowledge-based question answering.",
     "Authors": [
@@ -1252,13 +1257,13 @@
       "value": "EMNLP"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Modality and Structural Extension"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Large Language Models (LLMs) demonstrate strong reasoning ability but are constrained by outdated knowledge and hallucinations.Knowledge Graphs (KGs) can help mitigate these limitations by providing structured relational knowledge and capturing global multi-entity, multi-hop dependencies beyond linear text.However, existing KG-enhanced LLM reasoning methods mostly rely on hop-by-hop textual traversal, rather than making multi-hop decisions with a broader perspective as humans do, thus underusing the structural advantages of KGs.This leads to myopic exploration and fragmented reasoning, wasting effort on irrelevant entities while potentially missing critical ones.To address these limitations, we propose Foresight-on-Graph (FoG), a novel framework that introduces visual relation graphs to expand the reasoning horizon at each step.FoG enables Vision-Language Models (VLMs) to simultaneously attend to multi-entity, multi-hop contexts, supporting foresighted planning and more efficient graph exploration.To facilitate effective visual reasoning, we design relation-based fuzzy matching and union-find algorithms to filter out irrelevant relations and coarsen the graph, condensing subgraphs with millions of entities into compact relation graphs with only tens of nodes.Experiments on three real-world datasets demonstrate that FoG consistently outperforms existing methods while significantly improving reasoning efficiency.Code is available at https://github.com/hyworrywart/ FoG. K Use of AI AssistantsAI assistants were used for language polishing, editing suggestions, and checklist preparation.All technical content, claims, experiments, and final text were reviewed and verified by the authors.",
     "Authors": [
@@ -1282,13 +1287,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
       "Modality and Structural Extension"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Abstract": "Despite their success, large language models (LLMs) suffer from notorious hallucination issue.By introducing external knowledge stored in knowledge graphs (KGs), existing methods use paths as the medium to represent the graph information sent into LLMs.However, paths only contain limited graph structure information and are unorganized with redundant sequentially appearing keywords, which are difficult for LLMs to digest.We aim to find a suitable medium that captures the essence of structural knowledge in KGs.Inspired by Neural Message Passing in Graph Neural Networks, we propose Language Message Passing (LMP), which first learns a concise facts graph by iteratively aggregating neighbor entities and transforming them into semantic facts, and then performs Topological Readout that encodes the graph structure information into multi-level lists of texts to augment LLMs.Our method serves as a brand-new innovative framework that brings a new perspective into KG-enhanced LLMs, and also offers humanlevel semantic explainability with significant performance improvements over existing methods on all five knowledge graph question answering datasets.",
     "Authors": [
@@ -1311,10 +1316,10 @@
       "value": "ICLR"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Supervised Fine-tuning and Multi-task Learning"
@@ -1346,10 +1351,10 @@
       "value": "EMNLP"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Supervised Fine-tuning and Multi-task Learning"
@@ -1375,10 +1380,10 @@
       "value": "TKDE"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "In-context Learning and Training-free Adaptation"
@@ -1411,10 +1416,10 @@
       "value": "AAAI"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "In-context Learning and Training-free Adaptation"
@@ -1438,10 +1443,10 @@
       "value": "ICLR"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "In-context Learning and Training-free Adaptation"
@@ -1475,13 +1480,13 @@
       "value": "ACL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
-      ""
+      "Hybrid Supervised and In-context Learning"
     ],
     "Abstract": "Mayur Patidar, Riya Sawhney, Avinash Singh, Biswajit Chatterjee, Mausam ., Indrajit Bhattacharya. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
     "Authors": [
@@ -1504,10 +1509,10 @@
       "value": "GAIL"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Imitation and Adversarial Learning"
@@ -1530,10 +1535,10 @@
       "value": "WWW"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Reinforcement Learning"
@@ -1554,10 +1559,10 @@
       "value": "ArXiv"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Reinforcement Learning"
@@ -1585,10 +1590,10 @@
       "value": "EMNLP"
     },
     "Data Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Model Level Mechanisms": [
-      ""
+      "Other"
     ],
     "Learning Level Mechanisms": [
       "Knowledge Distillation"
