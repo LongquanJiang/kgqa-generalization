@@ -9,7 +9,7 @@ var Option = antd_1.Select.Option;
 var Button = antd_1.Radio.Button, Group = antd_1.Radio.Group;
 function App() {
     var _a = react_1.useState("Line Chart"), chart = _a[0], setChart = _a[1];
-    var _b = react_1.useState("Type of Data"), type = _b[0], setType = _b[1];
+    var _b = react_1.useState("Data Level Mechanisms"), type = _b[0], setType = _b[1];
     function HandleChartChange(e) {
         setChart(e.target.value);
     }

@@ -110,6 +110,7 @@ def get_paper_metadata(doi, timeout=20, pause=0.2):
             abstract = metadata.get("abstract", "").strip()
 
             if abstract:
+                print(f"{provider_name}: abstract found")
                 return {
                     "DOI": doi,
                     **metadata,
@@ -179,6 +180,9 @@ def import_csv(csv_loc):
             paper_metadata = get_paper_metadata(obj["url"])
             obj["Abstract"] = paper_metadata["abstract"]
             obj["Authors"] = [re.sub(r'\d+', '', x).strip() for x in paper_metadata["authors"].split(',')]
+            obj["Data Level Mechanisms"] = [re.sub(r'\d+', '', x).strip() for x in obj["Data Level Mechanisms"].split(',')]
+            obj["Model Level Mechanisms"] = [re.sub(r'\d+', '', x).strip() for x in obj["Model Level Mechanisms"].split(',')]
+            obj["Learning Level Mechanisms"] = [re.sub(r'\d+', '', x).strip() for x in obj["Learning Level Mechanisms"].split(',')]
             obj["IsOld"] = True
             objs.append(obj)
 

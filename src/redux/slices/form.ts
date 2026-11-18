@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Problem, Method, Data, Task, Explanation, Model, Paper, Venue } from "../../types"
+import { Data, Learning, Model, Paper, Venue } from "../../types"
 
 
 const initialState: Paper & { Comment?: string } = {
@@ -11,12 +11,9 @@ const initialState: Paper & { Comment?: string } = {
 		value: ""
 	},
 	Authors: [],
-	"Type of Data": [],
-	"Type of Problem": [],
-	"Type of Model to be Explained": [],
-	"Type of Task": [],
-	"Type of Explanation": [],
-	"Method used to explain": [],
+	"Data Level Mechanisms": [],
+	"Model Level Mechanisms": [],
+	"Learning Level Mechanisms": [],
 	"Abstract": "",
 	Date: new Date()
 }
@@ -44,22 +41,13 @@ const formSlice = createSlice({
 			state.Venue.value = action.payload
 		},
 		setData(state, action: PayloadAction<Array<typeof Data>>) {
-			state["Type of Data"] = action.payload
-		},
-		setProblem(state, action: PayloadAction<Array<typeof Problem>>) {
-			state["Type of Problem"] = action.payload
+			state["Data Level Mechanisms"] = action.payload
 		},
 		setModel(state, action: PayloadAction<Array<typeof Model>>) {
-			state["Type of Model to be Explained"] = action.payload
+			state["Model Level Mechanisms"] = action.payload
 		},
-		setTask(state, action: PayloadAction<Array<typeof Task>>) {
-			state["Type of Task"] = action.payload
-		},
-		setExplanation(state, action: PayloadAction<Array<typeof Explanation>>) {
-			state["Type of Explanation"] = action.payload
-		},
-		setMethod(state, action: PayloadAction<Array<typeof Method>>) {
-			state["Method used to explain"] = action.payload
+		setLearning(state, action: PayloadAction<Array<typeof Learning>>) {
+			state["Learning Level Mechanisms"] = action.payload
 		},
 		setAbstract(state, action: PayloadAction<string>) {
 			state["Abstract"] = action.payload

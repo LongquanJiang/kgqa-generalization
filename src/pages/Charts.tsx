@@ -10,7 +10,7 @@ const { Button, Group } = Radio
 
 function App() {
 	const [chart, setChart] = useState("Line Chart")
-	const [type, setType] = useState<keyof Paper>("Type of Data")
+	const [type, setType] = useState<keyof Paper>("Data Level Mechanisms")
 
 	function HandleChartChange(e: RadioChangeEvent): void {
 		setChart(e.target.value)

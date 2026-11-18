@@ -8,45 +8,24 @@ const properties = schema.items.properties
 // Because of the syntax it can be used to get the correct types using typeof (creating a normal object does not work)
 export let Data: any
 (function (Data) {
-	properties["Type of Data"].items.enum.forEach((val) => {
+	properties["Data Level Mechanisms"].items.enum.forEach((val) => {
 		Data[val] = val
 	})
 })(Data || (Data = {}))
 
-export let Explanation: any
-(function (Explanation) {
-	properties["Type of Explanation"].items.enum.forEach((val) => {
-		Explanation[val] = val
-	})
-})(Explanation || (Explanation = {}))
-
-export let Problem: any
-(function (Problem) {
-	properties["Type of Problem"].items.enum.forEach((val) => {
-		Problem[val] = val
-	})
-})(Problem || (Problem = {}))
-
 export let Model: any
 (function (Model) {
-	properties["Type of Model to be Explained"].items.enum.forEach((val) => {
+	properties["Model Level Mechanisms"].items.enum.forEach((val) => {
 		Model[val] = val
 	})
 })(Model || (Model = {}))
 
-export let Task: any 
-(function (Task) {
-	properties["Type of Task"].items.enum.forEach((val) => {
-		Task[val] = val
+export let Learning: any
+(function (Learning) {
+	properties["Learning Level Mechanisms"].items.enum.forEach((val) => {
+		Learning[val] = val
 	})
-})(Task || (Task = {}))
-
-export let Method: any 
-(function (Method) {
-	properties["Method used to explain"].items.enum.forEach((val) => {
-		Method[val] = val
-	})
-})(Method || (Method = {}))
+})(Learning || (Learning = {}))
 
 export interface Paper {
     Title: string
@@ -54,12 +33,9 @@ export interface Paper {
     Year: string
     Venue: VenueType
     Authors: Array<string>
-    "Type of Data": Array<typeof Data>
-    "Type of Problem": Array<typeof Problem>
-    "Type of Model to be Explained": Array<typeof Model>
-    "Type of Task": Array<typeof Task>
-    "Type of Explanation": Array<typeof Explanation>
-    "Method used to explain": Array<typeof Method>
+    "Data Level Mechanisms": Array<typeof Data>
+    "Model Level Mechanisms": Array<typeof Model>
+    "Learning Level Mechanisms": Array<typeof Learning>
     Abstract: string
     Comment?: string
     Date?: Date,
@@ -84,6 +60,11 @@ export enum Venue {
     IJCAI = "IJCAI",
     ICML = "ICML",
     CVPR = "CVPR",
+    NAACL = "NAACL",
+    EMNLP = "EMNLP",
+    CIKM = "CIKM",
+    COLING = "COLING",
+    LREC = "LREC",
     Other = "Other"
 }
 

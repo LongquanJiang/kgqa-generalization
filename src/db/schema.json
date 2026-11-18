@@ -25,46 +25,25 @@
                     "type": "string"
                 }
             },
-            "Type of Data": {
+            "Data Level Mechanisms": {
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["User-item matrix", "Time series", "Any", "Text", "Tabular / structured", "Images", "Video", "Other", "Graph data"]
+                    "enum": ["Synthetic Data Generation", "Unified Intermediate Representation", "Schema-aware Context and Evidence Construction"]
                 }
             },
-            "Type of Problem": {
+            "Model Level Mechanisms": {
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["Model Explanation", "Transparent Box Design", "Model Inspection", "Outcome Explanation"]
+                    "enum": ["Schema Decoupling and Grounding", "Compositional Reasoning and Planning", "Execution Feedback and Self-Correction", "Search and Test-Time Scaling", "Experience Reuse and Memory", "Multi-model Collaboration and Component Alignment", "Continual Adaptation and Knowledge Decoupling", "Modality and Structural Extension"]
                 }
             },
-            "Type of Model to be Explained": {
+            "Learning Level Mechanisms": {
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["Logistic Regression", "Tree Ensemble", "Support Vector Machine", "Any (for a specific task); model-agnostic", "(Deep) Neural Network", "Other", "Bayesian or Hierarchical Network"]
-                }
-            },
-            "Type of Task": {
-                "type": "array",
-                "items": {
-                    "type": "string",
-                    "enum": ["Classification", "Policy learning", "Generation", "Question Answering", "Representation learning", "Regression", "Retrieval", "Anomaly detection", "Recommendation", "Other", "Clustering"]
-                }
-            },
-            "Type of Explanation": {
-                "type": "array",
-                "items": {
-                    "type": "string",
-                    "enum": ["Disentanglement", "Feature plot", "Prototypes", "Decision Rules", "Feature Importance", "Text", "Decision Tree", "Representation Visualization", "Localization", "White-box model", "Heatmap", "Other", "Representation Synthesis", "Graph"]
-                }
-            },
-            "Method used to explain": {
-                "type": "array",
-                "items": {
-                    "type": "string",
-                    "enum": ["Interpretability built into the predictive model", "Supervised explanation training", "Post-hoc explanation method"]
+                    "enum": ["Supervised Fine-tuning and Multi-task Learning", "In-context Learning and Training-free Adaptation", "Hybrid Supervised and In-context Learning", "Self-Supervised and Synthetic-data Training", "Contrastive and Discriminative Learning", "Imitation and Adversarial Learning", "Reinforcement Learning", "Knowledge Distillation", "Alignment and Preference Optimization"]
                 }
             },
             "Abstract": {
@@ -87,9 +66,9 @@
             "Year",
             "Venue",
             "Authors",
-            "Data Level Methods",
-            "Model Level Methods",
-            "Learning Level Methods",
+            "Data Level Mechanisms",
+            "Model Level Mechanisms",
+            "Learning Level Mechanisms",
             "Abstract"
         ]
     }

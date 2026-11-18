@@ -1,13 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Data, Explanation, Method, Model, Problem, Task, Venue } from "../../types"
+import { Data, Model, Learning, Venue } from "../../types"
 
 export type Filters = {
     data: Array<typeof Data>
-    problem: Array<typeof Problem>
     model: Array<typeof Model>
-    task: Array<typeof Task>
-    explanation: Array<typeof Explanation>
-    method: Array<typeof Method>
+    learning: Array<typeof Learning>
 	venue: Array<Venue>
 	startYear?: number
 	endYear?: number
@@ -19,11 +16,8 @@ export type Filters = {
 
 const initialState: Filters = {
 	data: [],
-	problem: [],
 	model: [],
-	task: [],
-	explanation: [],
-	method: [],
+	learning: [],
 	venue: [],
 	startYear: undefined,
 	endYear: undefined,
@@ -43,20 +37,11 @@ const filtersSlice = createSlice({
 		setData(state, action: PayloadAction<Array<typeof Data>>) {
 			state.data = action.payload
 		},
-		setProblem(state, action: PayloadAction<Array<typeof Problem>>) {
-			state.problem = action.payload
-		},
 		setModel(state, action: PayloadAction<Array<typeof Model>>) {
 			state.model = action.payload
 		},
-		setTask(state, action: PayloadAction<Array<typeof Task>>) {
-			state.task = action.payload
-		},
-		setExplanation(state, action: PayloadAction<Array<typeof Explanation>>) {
-			state.explanation = action.payload
-		},
-		setMethod(state, action: PayloadAction<Array<typeof Method>>) {
-			state.method = action.payload
+		setLearning(state, action: PayloadAction<Array<typeof Learning>>) {
+			state.learning = action.payload
 		},
 		setVenue(state, action: PayloadAction<Array<Venue>>) {
 			state.venue = action.payload

@@ -1,7 +1,7 @@
 import React from "react"
 import { Col, Row, DatePicker, Input, Tooltip, Form, Radio, RadioChangeEvent, Button, Checkbox } from "antd"
 import { InfoCircleOutlined } from "@ant-design/icons"
-import { Data, Explanation, Method, Model, Problem, Task, SelectValue, Venue } from "../types"
+import { Data, Model, SelectValue, Venue, Learning } from "../types"
 import { filtersActions } from "../redux"
 import { useAppDispatch, useAppSelector } from "../hooks"
 import { fromSelectValue } from "../utils"
@@ -21,24 +21,12 @@ function Filters(): JSX.Element {
 		dispatch(filtersActions.setData(fromSelectValue(value)))
 	}
 
-	function handleProblemChange(value: Array<SelectValue<typeof Problem>>) {
-		dispatch(filtersActions.setProblem(fromSelectValue(value)))
-	}
-
 	function handleModelChange(value: Array<SelectValue<typeof Model>>) {
 		dispatch(filtersActions.setModel(fromSelectValue(value)))
 	}
 
-	function handleTaskChange(value: Array<SelectValue<typeof Task>>) {
-		dispatch(filtersActions.setTask(fromSelectValue(value)))
-	}
-
-	function handleExplanationChange(value: Array<SelectValue<typeof Explanation>>) {
-		dispatch(filtersActions.setExplanation(fromSelectValue(value)))
-	}
-
-	function handleMethodChange(value: Array<SelectValue<typeof Method>>) {
-		dispatch(filtersActions.setMethod(fromSelectValue(value)))
+	function handleLearningChange(value: Array<SelectValue<typeof Learning>>) {
+		dispatch(filtersActions.setLearning(fromSelectValue(value)))
 	}
 
 	function handleVenueChange(value: Array<SelectValue<Venue>>) {
@@ -104,16 +92,11 @@ function Filters(): JSX.Element {
 			</Col>
 
 			{/* Second row */}
-			<Select placeholder="Type of Data" enumerator={Data} handleChange={handleDataChange} value={filters.data} span={8} />
-			<Select placeholder="Type of Problem" enumerator={Problem} handleChange={handleProblemChange} value={filters.problem} span={8} />
-			<Select placeholder="Type of Model to be Explained" enumerator={Model} handleChange={handleModelChange} value={filters.model} span={8} />
+			<Select placeholder="Data Level Mechanisms" enumerator={Data} handleChange={handleDataChange} value={filters.data} span={8} />
+			<Select placeholder="Model Level Mechanisms" enumerator={Model} handleChange={handleModelChange} value={filters.model} span={8} />
+			<Select placeholder="Learning Level Mechanisms" enumerator={Learning} handleChange={handleLearningChange} value={filters.learning} span={8} />
 
 			{/* Third row */}
-			<Select placeholder="Type of Task" enumerator={Task} handleChange={handleTaskChange} value={filters.task} span={8} />
-			<Select placeholder="Type of Explanation" enumerator={Explanation} handleChange={handleExplanationChange} value={filters.explanation} span={8} />
-			<Select placeholder="Method used to explain" enumerator={Method} handleChange={handleMethodChange} value={filters.method} span={8} />
-
-			{/* Fourth row */}
 			<Select placeholder="Venue" enumerator={Venue} handleChange={handleVenueChange} value={filters.venue} span={8} />
 
 			<Col span={8}>
