@@ -1,4 +1,4 @@
-import { Form, Input, InputNumber, Button, Col, Row, Collapse, notification, Image } from "antd"
+import { Form, Input, InputNumber, Button, Col, Row, notification } from "antd"
 import { Data, Model, Learning, SelectValue, Venue } from "../types"
 import { Select } from "../components"
 import { fromSelectValue, printNames } from "../utils"
