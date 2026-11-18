@@ -11,20 +11,6 @@ var icons_1 = require("@ant-design/icons");
 var Item = antd_1.Form.Item;
 var TextArea = antd_1.Input.TextArea;
 var Panel = antd_1.Collapse.Panel;
-// if imageUrl is given, it will render a panel with the image.
-function TypeOfExplanation(_a) {
-    var name = _a.name, description = _a.description, imageUrl = _a.imageUrl;
-    var imageCitation = imageUrl ? imageUrl.split(".")[0].split("_") : undefined;
-    var citation = imageCitation === null || imageCitation === void 0 ? void 0 : imageCitation[(imageCitation === null || imageCitation === void 0 ? void 0 : imageCitation.length) - 1];
-    return (react_1["default"].createElement(react_1["default"].Fragment, null,
-        react_1["default"].createElement("p", { style: { margin: 0 } },
-            react_1["default"].createElement("i", null, name),
-            ", ",
-            description),
-        imageUrl ? react_1["default"].createElement(antd_1.Collapse, { style: { marginBottom: 10 } },
-            react_1["default"].createElement(Panel, { header: "Example taken from [" + citation + "]", key: "1" },
-                react_1["default"].createElement(antd_1.Image, { src: "" + (process.env.PUBLIC_URL + "/explanation_types_examples/") + imageUrl, style: { width: "100%" } }))) : null));
-}
 function isUrl(str) {
     var pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
         "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
@@ -86,7 +72,7 @@ function AddPaper() {
         dispatch(redux_1.formActions.setModel(utils_1.fromSelectValue(value)));
     }
     function handleChangeLearning(value) {
-        dispatch(redux_1.formActions.setExplanation(utils_1.fromSelectValue(value)));
+        dispatch(redux_1.formActions.setLearning(utils_1.fromSelectValue(value)));
     }
     function handleChangeAbstract(value) {
         dispatch(redux_1.formActions.setAbstract(value.currentTarget.value));

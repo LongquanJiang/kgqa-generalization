@@ -11,28 +11,6 @@ const { Item } = Form
 const { TextArea } = Input
 const { Panel } = Collapse
 
-type TypeOfExplanationProps = {
-	name: string,
-	description: string,
-	imageUrl?: string // In this case, imageUrl should be inside the explanation_types_examples folder
-}
-
-// if imageUrl is given, it will render a panel with the image.
-function TypeOfExplanation({ name, description, imageUrl }: TypeOfExplanationProps) {
-	const imageCitation = imageUrl ? imageUrl.split(".")[0].split("_") : undefined
-	const citation = imageCitation?.[imageCitation?.length - 1]
-	return (
-		<>
-			<p style={{ margin: 0 }}><i>{name}</i>, {description}</p>
-			{imageUrl ? <Collapse style={{ marginBottom: 10 }}>
-				<Panel header={`Example taken from [${citation}]`} key="1">
-					<Image src={`${process.env.PUBLIC_URL + "/explanation_types_examples/"}${imageUrl}`} style={{width: "100%"}}/>
-				</Panel>
-			</Collapse> : null}
-			
-		</>
-	)
-}
 
 function isUrl(str: string) {
 	const pattern = new RegExp("^(https?:\\/\\/)?"+ // protocol
@@ -108,7 +86,7 @@ function AddPaper() {
 	}
 
 	function handleChangeLearning(value: Array<SelectValue<typeof Learning>>) {
-		dispatch(formActions.setExplanation(fromSelectValue(value)))
+		dispatch(formActions.setLearning(fromSelectValue(value)))
 	}
 
 	function handleChangeAbstract(value: React.ChangeEvent<HTMLTextAreaElement>) {

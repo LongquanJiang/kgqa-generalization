@@ -5,7 +5,7 @@ import { Provider } from "react-redux"
 import { store } from "../redux"
 import "@testing-library/jest-dom"
 import { prettyDOM } from "@testing-library/react"
-import { Data, Explanation, Problem, Model, Task, Method } from "../types/paper"
+import { Data, Model, Learning } from "../types/paper"
 import { brotliCompressSync } from "zlib"
 
 let container: HTMLElement | null = null
@@ -28,7 +28,7 @@ function simulateMouseClick(element: any) {
 describe("Test", () => {
 	it("Checks filters", () => {
 		// Render filters
-		const filters = [Data, Explanation, Problem, Model, Task, Method]
+		const filters = [Data, Model, Learning]
 		act(() => {
 			render(<Provider store={store}><Filters /></Provider>, container)
 		})
