@@ -29,21 +29,21 @@
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["Synthetic Data Generation", "Unified Intermediate Representation", "Schema-aware Context and Evidence Construction"]
+                    "enum": ["Synthetic Data Generation", "Unified Intermediate Representation", "Schema-aware Context and Evidence Construction", "Other"]
                 }
             },
             "Model Level Mechanisms": {
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["Schema Decoupling and Grounding", "Compositional Reasoning and Planning", "Execution Feedback and Self-Correction", "Search and Test-Time Scaling", "Experience Reuse and Memory", "Multi-model Collaboration and Component Alignment", "Continual Adaptation and Knowledge Decoupling", "Modality and Structural Extension"]
+                    "enum": ["Schema Decoupling and Grounding", "Compositional Reasoning and Planning", "Execution Feedback and Self-Correction", "Search and Test-Time Scaling", "Experience Reuse and Memory", "Multi-model Collaboration and Component Alignment", "Continual Adaptation and Knowledge Decoupling", "Modality and Structural Extension", "Other"]
                 }
             },
             "Learning Level Mechanisms": {
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "enum": ["Supervised Fine-tuning and Multi-task Learning", "In-context Learning and Training-free Adaptation", "Hybrid Supervised and In-context Learning", "Self-Supervised and Synthetic-data Training", "Contrastive and Discriminative Learning", "Imitation and Adversarial Learning", "Reinforcement Learning", "Knowledge Distillation", "Alignment and Preference Optimization"]
+                    "enum": ["Supervised Fine-tuning and Multi-task Learning", "In-context Learning and Training-free Adaptation", "Hybrid Supervised and In-context Learning", "Self-Supervised and Synthetic-data Training", "Contrastive and Discriminative Learning", "Imitation and Adversarial Learning", "Reinforcement Learning", "Knowledge Distillation", "Alignment and Preference Optimization", "Other"]
                 }
             },
             "Abstract": {
